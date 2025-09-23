@@ -1,0 +1,26 @@
+rules_version = '2';
+
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Images folder - publicly readable, authenticated users can write
+    match /images/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null 
+                   && request.resource.size < 5 * 1024 * 1024 // 5MB limit
+                   && request.resource.contentType.matches('image/.*');
+    }
+    
+    // Documents folder - authenticated users only
+    match /documents/{allPaths=**} {
+      allow read, write: if request.auth != null
+                         && request.resource.size < 10 * 1024 * 1024; // 10MB limit
+    }
+    
+    // User uploads - users can only access their own files
+    match /users/{userId}/{allPaths=**} {
+      allow read, write: if request.auth != null 
+                         && request.auth.uid == userId
+                         && request.resource.size < 20 * 1024 * 1024; // 20MB limit
+    }
+  }
+}
