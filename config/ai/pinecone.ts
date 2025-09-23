@@ -5,7 +5,8 @@ if (!process.env.PINECONE_API_KEY) {
 }
 
 export const pinecone = new Pinecone({
-  apiKey: process.env.PINECONE_API_KEY,
+  apiKey: process.env.PINECONE_API_KEY!,
+  environment: process.env.PINECONE_ENVIRONMENT || 'us-west1-gcp',
 });
 
 export const pineconeConfig = {
