@@ -1,43 +1,37 @@
-'use client';
-
-import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export function useThemeToggle() {
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const [isDark, setIsDark] = useState<boolean>(false);
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    const shouldBeDark = savedTheme === 'dark' || (!savedTheme && systemPrefersDark);
+    setIsDark(shouldBeDark);
+    
+    if (shouldBeDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    
     setMounted(true);
   }, []);
 
   const toggleTheme = () => {
-    if (theme === 'dark') {
-      setTheme('light');
-    } else if (theme === 'light') {
-      setTheme('dark');
+    const newIsDark = !isDark;
+    setIsDark(newIsDark);
+    
+    if (newIsDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
     } else {
-      // If theme is 'system', toggle based on resolved theme
-      setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     }
   };
 
-  // Return safe values to prevent hydration issues
-  if (!mounted) {
-    return {
-      theme: 'light',
-      toggleTheme: () => {},
-      isDark: false,
-      isLight: true,
-      mounted: false,
-    };
-  }
-
-  return {
-    theme,
-    toggleTheme,
-    isDark: resolvedTheme === 'dark',
-    isLight: resolvedTheme === 'light',
-    mounted,
-  };
+  return { isDark, toggleTheme, mounted };
 }
