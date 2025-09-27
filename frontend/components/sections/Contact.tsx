@@ -1,137 +1,208 @@
 'use client';
-import { useState } from 'react';
-import { Send, Mail, Linkedin, Code } from 'lucide-react';
-import { useToast } from '../../hooks/use-toast';
+import React, { useRef, useState } from 'react';
+import { Mail, Github, Linkedin, Send } from 'lucide-react';
+import { motion } from 'framer-motion';
 
-export function Contact() {
-const [formData, setFormData] = useState({
-  name: '',
-  email: '',
-  message: ''
-});
-const [isSubmitting, setIsSubmitting] = useState(false);
-const { toast } = useToast();
+export default function Contact() {
+  const [sent, setSent] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+  const [copyMsg, setCopyMsg] = useState('');
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
-
-  // Simulate form submission
-  try {
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    
+    if (!form.name.valueOf || !form.email.value || !form.message.value) {
+      alert('All fields required');
+      return;
+    }
+    
+    setIsLoading(true);
+    
+    // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    toast({
-      title: "Message sent!",
-      description: "Thank you for your message. I'll get back to you soon.",
-    });
-    setFormData({ name: '', email: '', message: '' });
-  } catch (error) {
-    toast({
-      title: "Error",
-      description: "Failed to send message. Please try again.",
-      variant: "destructive",
-    });
-  } finally {
-    setIsSubmitting(false);
+    
+    setSent(true);
+    setIsLoading(false);
+    form.reset();
+    
+    setTimeout(() => setSent(false), 3000);
   }
-};
 
-const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  setFormData(prev => ({
-    ...prev,
-    [e.target.name]: e.target.value
-  }));
-};
+  function copyEmail() {
+    navigator.clipboard.writeText('murtazasadriwala09@gmail.com');
+    setCopyMsg('Copied!');
+    setTimeout(() => setCopyMsg(''), 2000);
+  }
 
-return (
-  <section id="contact" className="py-20 bg-background">
-    <div className="container-section">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 text-gradient">Get In Touch</h2>
-      <div className="max-w-2xl mx-auto">
-        <p className="text-lg text-muted-foreground mb-8 text-center">
-          Interested in collaborating or learning more about AI-powered web development? 
-          Let's connect and build something amazing together.
-        </p>
-        
-        <form onSubmit={handleSubmit} className="space-y-6 mb-8" data-testid="contact-form">
-          <div>
-            <input 
-              type="text" 
-              name="name"
-              placeholder="Your Name" 
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="w-full p-4 border border-border rounded-lg bg-background focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-              data-testid="input-name"
-            />
-          </div>
-          <div>
-            <input 
-              type="email" 
-              name="email"
-              placeholder="Your Email" 
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="w-full p-4 border border-border rounded-lg bg-background focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
-              data-testid="input-email"
-            />
-          </div>
-          <div>
-            <textarea 
-              name="message"
-              placeholder="Your Message" 
-              rows={4} 
-              value={formData.message}
-              onChange={handleChange}
-              required
-              className="w-full p-4 border border-border rounded-lg bg-background focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all resize-none"
-              data-testid="input-message"
-            />
-          </div>
-          <button 
-            type="submit" 
-            disabled={isSubmitting}
-            className="w-full bg-primary text-primary-foreground py-4 rounded-lg font-semibold hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2 disabled:opacity-50"
-            data-testid="submit-button"
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
+  return (
+    <section id="contact" className="py-16 lg:py-20 bg-gradient-to-br from-white/50 to-blue-50/30 dark:from-secondary-900/50 dark:to-purple-900/20">
+      <div className="container max-w-xl mx-auto px-4 sm:px-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={containerVariants}
+        >
+          <motion.h2 
+            className="text-3xl sm:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-primary to-accent-600 bg-clip-text text-transparent"
+            variants={itemVariants}
           >
-            {isSubmitting ? 'Sending...' : (
-              <>
-                Send Message <Send size={20} />
-              </>
-            )}
-          </button>
-        </form>
-        
-        <div className="flex justify-center gap-4">
-          <a 
-            href="mailto:murtazasadriwala09@gmail.com" 
-            className="btn-secondary"
-            data-testid="contact-email"
+            Get In Touch
+          </motion.h2>
+          
+          <motion.form 
+            ref={formRef} 
+            onSubmit={handleSubmit}
+            className="glass-panel p-6 sm:p-8 rounded-2xl shadow-lg"
+            variants={itemVariants}
           >
-            <Mail size={20} /> Email
-          </a>
-          <a 
-            href="https://linkedin.com/in/murtaza-sadri" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn-secondary"
-            data-testid="contact-linkedin"
+            <div className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  className="form-input w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm transition-all duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  placeholder="Your Name"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  className="form-input w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm transition-all duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20"
+                  placeholder="your.email@example.com"
+                />
+              </div>
+              
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={4}
+                  className="form-input w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm transition-all duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20 resize-none"
+                  placeholder="Your message..."
+                />
+              </div>
+              
+              <motion.button
+                type="submit"
+                disabled={isLoading}
+                className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                whileHover={{ scale: isLoading ? 1 : 1.02 }}
+                whileTap={{ scale: isLoading ? 1 : 0.98 }}
+              >
+                {isLoading ? (
+                  <>
+                    <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Sending...
+                  </>
+                ) : sent ? (
+                  <>
+                    <Send size={18} />
+                    Message Sent!
+                  </>
+                ) : (
+                  <>
+                    <Send size={18} />
+                    Send Message
+                  </>
+                )}
+              </motion.button>
+            </div>
+          </motion.form>
+          
+          <motion.div 
+            className="mt-8 text-center"
+            variants={itemVariants}
           >
-            <Linkedin size={20} /> LinkedIn
-          </a>
-          <a 
-            href="https://devpost.com/msadriwala9" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn-secondary"
-            data-testid="contact-devpost"
-          >
-            <Code size={20} /> Devpost
-          </a>
-        </div>
+            <p className="text-gray-600 dark:text-gray-400 mb-4">Or reach out directly</p>
+            
+            <div className="flex justify-center space-x-4">
+              <motion.a
+                href="mailto:murtazasadriwala09@gmail.com"
+                className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full hover:from-primary/20 hover:to-accent/20 transition-all duration-200 border border-primary/20"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                title="Email"
+              >
+                <Mail size={20} className="text-primary dark:text-accent" />
+              </motion.a>
+              
+              <motion.a
+                href="https://github.com/murtaza09"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full hover:from-primary/20 hover:to-accent/20 transition-all duration-200 border border-primary/20"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                title="GitHub"
+              >
+                <Github size={20} className="text-primary dark:text-accent" />
+              </motion.a>
+              
+              <motion.a
+                href="https://linkedin.com/in/murtaza-sadri"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full hover:from-primary/20 hover:to-accent/20 transition-all duration-200 border border-primary/20"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                title="LinkedIn"
+              >
+                <Linkedin size={20} className="text-primary dark:text-accent" />
+              </motion.a>
+            </div>
+            
+            <motion.div className="mt-4">
+              <button
+                onClick={copyEmail}
+                className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-accent transition-colors duration-200"
+              >
+                murtazasadriwala09@gmail.com
+                {copyMsg && <span className="ml-2 text-green-600">{copyMsg}</span>}
+              </button>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
 }

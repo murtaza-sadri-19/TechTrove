@@ -37,6 +37,8 @@
   --purple-500: hsl(270, 100%, 70%);
   --purple-600: hsl(270, 100%, 60%);
   --radius: 12px;
+  --glass-light: rgba(255, 255, 255, 0.1);
+  --glass-dark: rgba(0, 0, 0, 0.1);
 }
 
 .dark {
@@ -71,11 +73,17 @@
   --accent-600: hsl(263.4, 70%, 50.4%);
   --purple-500: hsl(270, 100%, 70%);
   --purple-600: hsl(270, 100%, 60%);
+  --glass-light: rgba(255, 255, 255, 0.05);
+  --glass-dark: rgba(0, 0, 0, 0.2);
 }
 
 @layer base {
   * {
     @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
@@ -86,32 +94,82 @@
   .font-mono {
     font-family: 'JetBrains Mono', monospace;
   }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
 @layer components {
   .container-section {
-    @apply container mx-auto px-6 max-w-7xl;
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
   }
 
+  /* Enhanced glassmorphism card */
+  .glass-panel {
+    @apply backdrop-blur-lg border;
+    background: linear-gradient(135deg, 
+      var(--glass-light) 0%, 
+      var(--glass-dark) 100%);
+    box-shadow: 
+      0 8px 32px 0 rgba(31, 38, 135, 0.07),
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+  }
+
+  /* Enhanced buttons with ripple effect */
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:opacity-90 transition-opacity;
+    @apply relative inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold overflow-hidden transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-800)));
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
   }
 
   .btn-secondary {
-    @apply inline-flex items-center gap-2 border border-border px-6 py-3 rounded-lg font-semibold hover:bg-secondary transition-colors;
+    @apply relative inline-flex items-center gap-2 border border-border px-6 py-3 rounded-lg font-semibold overflow-hidden transition-all duration-300;
+    background: transparent;
   }
 
+  .btn-secondary:hover {
+    @apply bg-secondary;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Enhanced text gradient */
   .text-gradient {
-    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent-600)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    background-size: 200% 200%;
+    animation: gradient-shift 6s ease infinite;
   }
 
+  /* Enhanced card with lift animation */
   .card {
-    @apply bg-card border border-border rounded-xl;
+    @apply bg-card border border-border rounded-xl transition-all duration-300;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   }
 
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Enhanced binary pixel animation */
   .binary-pixel {
     @apply transition-all duration-300 cursor-crosshair;
   }
@@ -119,8 +177,10 @@
   .binary-pixel:hover {
     @apply text-accent scale-110;
     text-shadow: 0 0 10px hsl(var(--accent));
+    filter: drop-shadow(0 0 8px hsl(var(--accent)));
   }
 
+  /* Enhanced animations */
   .animate-gradient {
     background-size: 200% 200%;
     animation: gradient 3s ease infinite;
@@ -135,6 +195,41 @@
     stroke-dashoffset: 200;
     animation: neural-flow 3s ease-in-out infinite;
   }
+
+  /* Section reveal animations */
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+
+  .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Enhanced form inputs */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-border backdrop-blur-sm transition-all duration-200;
+    background: hsl(var(--background) / 0.5);
+  }
+
+  .form-input:focus {
+    @apply border-primary outline-none;
+    box-shadow: 0 0 0 2px hsl(var(--primary) / 0.2);
+    transform: translateY(-1px);
+  }
+
+  /* Navigation active state */
+  .nav-active {
+    @apply text-primary relative;
+  }
+
+  .nav-active::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full;
+    animation: slideIn 0.3s ease-out;
+  }
 }
 
 @keyframes gradient {
@@ -146,6 +241,15 @@
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 
@@ -170,4 +274,37 @@
   100% { 
     stroke-dashoffset: -200; 
   }
+}
+
+@keyframes slideIn {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-600;
 }

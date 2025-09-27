@@ -30,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="font-sans antialiased bg-white dark:bg-secondary-900 text-secondary-900 dark:text-white transition-colors">
+    <html lang="en" suppressHydrationWarning className="scroll-smooth">
+      <body className="font-sans antialiased bg-gradient-to-br from-blue-50/30 via-white to-purple-50/30 dark:from-secondary-900 dark:via-secondary-800 dark:to-purple-900/20 transition-colors duration-300">
         <Providers>{children}</Providers>
       </body>
     </html>

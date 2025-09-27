@@ -1,19 +1,57 @@
-import { Hero } from '@/components/sections/Hero'
-import { About } from '@/components/sections/About';
+'use client';
+
+import { Header } from '@/components/layout/Header';
+import Hero from '@/components/sections/Hero'
+import About from '@/components/sections/About';
 import { Skills } from '@/components/sections/Skills';
-import { Projects } from '@/components/sections/Projects';
-import { Contact } from '@/components/sections/Contact';
+import Projects from '@/components/sections/Projects';
+import Contact from '@/components/sections/Contact';
 import { Footer } from '@/components/layout/Footer';
+import Experience from '@/components/sections/Experience';
+import { useEffect, useRef } from 'react';
 
 export default function HomePage() {
+  const sectionRefs = useRef<(HTMLElement | null)[]>([]);
+
+  useEffect(() => {
+    // Section reveal animation on scroll
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '-50px' }
+    );
+
+    sectionRefs.current.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const addToRefs = (el: HTMLElement | null) => {
+    if (el && !sectionRefs.current.includes(el)) {
+      el.classList.add('section-reveal');
+      sectionRefs.current.push(el);
+    }
+  };
+
   return (
-    <main className="scroll-smooth">
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Contact />
-      <Footer />
-    </main>
+    <>
+      <Header />
+      <main className="scroll-smooth pt-16">
+        <div ref={addToRefs}><Hero /></div>
+        <div ref={addToRefs}><About /></div>
+        <div ref={addToRefs}><Experience /></div>
+        <div ref={addToRefs}><Skills /></div>
+        <div ref={addToRefs}><Projects /></div>
+        <div ref={addToRefs}><Contact /></div>
+        <Footer />
+      </main>
+    </>
   );
 }
