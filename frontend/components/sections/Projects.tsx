@@ -31,10 +31,10 @@ export function Projects() {
       link: "https://github.com/murtaza-sadri-19/HealthSurveyAppAndroid"
     },
     {
-      title: "Skillathon Absenteeism Project",
+      title: "BlueTriangle Absenteeism Project",
       desc: "Hackathon-winning project on absenteeism prediction and analysis.",
       tags: ["ML", "Analytics", "Hackathon"],
-      link: "#"
+      link: "https://github.com/murtaza-sadri-19/BlueTriangle-Absenteeism"
     }
   ];
 
