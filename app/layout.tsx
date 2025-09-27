@@ -31,7 +31,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased bg-white dark:bg-secondary-900 text-secondary-900 dark:text-white transition-colors">
         <Providers>{children}</Providers>
       </body>
     </html>

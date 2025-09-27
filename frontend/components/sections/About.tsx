@@ -1,47 +1,34 @@
 export function About() {
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white dark:bg-secondary-900">
       <div className="container-section">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">About TechTrove</h2>
-        <div className="max-w-4xl mx-auto text-lg text-secondary-600 space-y-6">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">About Me</h2>
+        <div className="max-w-4xl mx-auto text-lg text-secondary-600 dark:text-secondary-300 space-y-6">
           <p>
             <strong>TechTrove</strong> is my personal portfolio platform — a space where 
-            technology, creativity, and impact converge. It goes beyond a simple 
-            resume website, serving as a living showcase of my journey, projects, 
-            and research in data science, deep learning, and real-world applications.
+            technology, creativity, and impact converge. It reflects my journey in 
+            data science, deep learning, and applied research.
           </p>
           <p>
-            Designed with <strong>Next.js 14</strong>, styled through <strong>Tailwind CSS</strong>, 
-            and enhanced with <strong>Framer Motion</strong>, the site blends clean UI with 
-            engaging interactions. Its foundation is built to be <strong>AI-ready</strong>, 
-            integrating services like <strong>OpenAI</strong>, <strong>Hugging Face</strong>, and 
-            <strong>Firebase</strong> for scalable and intelligent extensions.
+            I’ve contributed to <strong>OCR research (CRNN + CTC)</strong>, worked on 
+            <strong> 6D Pose Estimation of Space Objects</strong>, and developed applied 
+            pipelines like <strong>TLC plate detection</strong> using YOLO. Beyond research, 
+            I build scalable apps like <strong>CoderKabila</strong> and survey platforms in 
+            Flutter & Kotlin.
           </p>
           <p>
-            TechTrove reflects my belief in building solutions that are not only 
-            technically strong but also forward-looking — bridging today’s web 
-            development with tomorrow’s intelligent systems.
+            Achievements include leading my team to victory at <strong>Skillathon</strong>, 
+            interning in <strong>handwritten image-to-text translation</strong>, and 
+            participating in ISRO’s <strong>IRoC 2024</strong>.
           </p>
           <p className="text-center font-medium">
-            Explore more of my work on{" "}
-            <a
-              href="https://github.com/murtaza-sadri-19"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:underline"
-            >
+            Explore my{" "}
+            <a href="https://github.com/murtaza-sadri-19" target="_blank" className="text-primary-600 hover:underline">
               GitHub
-            </a>{" "}
-            and download my{" "}
-            <a
-              href="<!-- Add your resume link here -->"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary-600 hover:underline"
-            >
+            </a>{" "} or download my{" "}
+            <a href="/resume.pdf" target="_blank" className="text-primary-600 hover:underline">
               Resume
-            </a>
-            .
+            </a>.
           </p>
         </div>
       </div>
