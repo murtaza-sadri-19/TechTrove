@@ -8,7 +8,7 @@ export function Footer() {
             Built with Next.js, Tailwind CSS, and AI integrations
           </p>
           <p className="text-secondary-500 text-sm">
-            © 2024 TechTrove. All rights reserved.
+            © 2025 TechTrove. All rights reserved.
           </p>
         </div>
       </div>
