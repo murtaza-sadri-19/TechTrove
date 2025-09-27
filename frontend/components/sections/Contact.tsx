@@ -14,7 +14,7 @@ export default function Contact() {
     const form = e.target as HTMLFormElement;
     
     // Fixed typo: valueOf -> value
-    if (!form.name.value || !form.email.value || !form.message.value) {
+    if (!form.name.valueOf || !form.email.value || !form.message.value) {
       alert('All fields required');
       return;
     }
