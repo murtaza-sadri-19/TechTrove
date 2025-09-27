@@ -23,7 +23,10 @@ export default function HomePage() {
           }
         });
       },
-      { threshold: 0.1, rootMargin: '-50px' }
+      { 
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
     );
 
     sectionRefs.current.forEach((section) => {
@@ -43,7 +46,7 @@ export default function HomePage() {
   return (
     <>
       <Header />
-      <main className="scroll-smooth pt-16">
+      <main className="scroll-smooth pt-16 min-h-screen">
         <div ref={addToRefs}><Hero /></div>
         <div ref={addToRefs}><About /></div>
         <div ref={addToRefs}><Experience /></div>

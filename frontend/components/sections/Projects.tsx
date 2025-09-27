@@ -169,110 +169,6 @@ import React, { useState, useEffect } from 'react'
 import { Folder, ExternalLink, Github } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
-/*
-==============================
-📊 PROJECT PORTFOLIO OVERVIEW
-==============================
-
-🎯 CATEGORIES:
-- ML/AI: Machine Learning, Computer Vision, NLP projects
-- E-commerce: Online stores, payment systems, shopping platforms  
-- Web: Full-stack applications, APIs, frontend showcases
-- Research: Academic projects, experimental implementations
-
-🚀 FEATURED PROJECTS BREAKDOWN:
-
-1. 📝 OCR RESEARCH (CRNN + CTC)
-   ├── Description: Deep learning OCR for French/multilingual handwritten text
-   ├── Tech Stack: TensorFlow, CRNN Architecture, CTC Loss
-   ├── Performance: 96.2% accuracy, 15ms inference time
-   ├── Category: ML/Research
-   └── GitHub: https://github.com/murtaza-sadri-19/OCR-CRNN
-
-2. 🛰️ 6D POSE ESTIMATION
-   ├── Description: Space debris tracking using deep learning perception
-   ├── Tech Stack: PyTorch, Computer Vision, 3D Transformations
-   ├── Performance: 91.7% precision, 22ms processing time
-   ├── Category: ML/Research
-   └── Status: Research project (private repo)
-
-3. 🔍 TLC IMAGE PROCESSING
-   ├── Description: Automated plate/strip/spot detection system
-   ├── Tech Stack: YOLO v5/v8, OpenCV, Python
-   ├── Performance: 88.9% detection rate, 31ms speed
-   ├── Category: ML/Computer Vision
-   └── Use Case: Laboratory automation
-
-4. 📱 CODERKABILA DSA TRACKER
-   ├── Description: Community DSA practice tracker with Firebase
-   ├── Tech Stack: Flutter, Firebase, Real-time Database
-   ├── Metrics: 1.2k+ active users, 99.9% uptime
-   ├── Category: Mobile/Web
-   └── Features: Progress tracking, leaderboards, problem sets
-
-5. 📊 HEALTH SURVEY APP
-   ├── Description: Survey system for health/education policy planning
-   ├── Tech Stack: Kotlin, Firebase, Google Sheets API
-   ├── Impact: 5k+ surveys collected, real-time analytics
-   ├── Category: Mobile/Analytics
-   └── GitHub: https://github.com/murtaza-sadri-19/HealthSurveyAppAndroid
-
-6. 🏆 BLUETRIANGLE ABSENTEEISM
-   ├── Description: Hackathon winner - absenteeism prediction ML model
-   ├── Tech Stack: Scikit-learn, Pandas, Data Analysis
-   ├── Achievement: 🏆 First place, 92.4% prediction accuracy  
-   ├── Category: ML/Analytics
-   └── GitHub: https://github.com/murtaza-sadri-19/BlueTriangle-Absenteeism
-
-7. 🛒 SMARTSHOP E-COMMERCE PLATFORM
-   ├── Description: Full-stack e-commerce with ML recommendations
-   ├── Tech Stack: React, Node.js, MongoDB, TensorFlow.js
-   ├── Features: Real-time recommendations, payment integration
-   ├── Performance: 35% conversion increase, sub-100ms response
-   ├── Category: E-commerce/ML
-   └── Status: In development
-
-8. 🌐 TECHTROVE PORTFOLIO
-   ├── Description: Modern portfolio with interactive ML visualizations
-   ├── Tech Stack: Next.js 15, TypeScript, Framer Motion, Tailwind
-   ├── Features: Dark/light theme, binary animations, responsive
-   ├── Performance: 98+ Lighthouse score, SSR optimized
-   ├── Category: Web/Frontend
-   └── Current Project: This website!
-
-🔧 TECHNICAL EXPERTISE DEMONSTRATED:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Machine Learning:
-- Deep Learning: TensorFlow, PyTorch, CRNN, YOLO
-- Computer Vision: OpenCV, Image Processing, Object Detection
-- NLP: Text Recognition, Language Models
-- MLOps: Model optimization, inference optimization
-
-Full-Stack Development:  
-- Frontend: React, Next.js, Flutter, TypeScript
-- Backend: Node.js, Firebase, REST APIs
-- Database: MongoDB, Firestore, Real-time DB
-- Cloud: Firebase hosting, serverless functions
-
-Mobile Development:
-- Android: Kotlin, Java, native development
-- Cross-platform: Flutter, React Native
-- Backend integration: Firebase, REST APIs
-
-Research & Analytics:
-- Academic research methodologies
-- Data analysis and visualization
-- Performance optimization
-- Statistical modeling
-
-📈 IMPACT METRICS:
-- 7k+ combined users across applications
-- 96%+ average ML model accuracy
-- 99%+ application uptime
-- Multiple hackathon wins
-- Open source contributions
-*/
-
 const demoProjects = [
   {
     title: 'OCR Research (CRNN + CTC)',
@@ -367,65 +263,163 @@ export default function Projects() {
   }, [modalIdx]);
 
   return (
-    <section id="projects" className="py-16 bg-white/90">
-      <div className="container max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8">Projects & Case Studies</h2>
-        <div className="mb-6 flex gap-3">
+    <section id="projects" className="py-16 bg-gradient-to-br from-white/90 to-blue-50/50 dark:from-gray-900/90 dark:to-purple-900/30 transition-colors duration-300">
+      <div className="container max-w-6xl mx-auto px-4 sm:px-6">
+        <motion.h2 
+          className="text-3xl sm:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-primary to-accent-600 bg-clip-text text-transparent"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          Projects & Case Studies
+        </motion.h2>
+        
+        <motion.div 
+          className="mb-8 flex flex-wrap justify-center gap-3"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           {categories.map(cat => (
             <button
               key={cat}
-              className={`px-4 py-2 rounded-full ${active===cat ? 'bg-gradient-to-br from-blue-500 to-fuchsia-500 text-white' : 'bg-slate-200'}`}
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                active===cat 
+                  ? 'bg-gradient-to-r from-primary to-primary-600 text-white shadow-lg shadow-primary/25 dark:shadow-primary/40' 
+                  : 'bg-white/70 dark:bg-gray-800/70 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-primary/10 dark:hover:bg-primary/20 backdrop-blur-sm'
+              }`}
               onClick={() => setActive(cat)}
-            >{cat}</button>
+            >
+              {cat}
+            </button>
           ))}
-        </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        </motion.div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filtered.map((proj, idx) => (
-            <div
+            <motion.div
               key={proj.title}
               tabIndex={0}
               aria-label={`${proj.title} details`}
-              className="bg-white/70 rounded-lg glass-panel p-5 shadow-lg group relative hover:shadow-2xl focus:ring-2"
+              className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl glass-panel p-6 shadow-lg border border-gray-200/50 dark:border-gray-700/50 group relative hover:shadow-2xl dark:hover:shadow-2xl dark:hover:shadow-primary/10 focus:ring-2 focus:ring-primary/50 cursor-pointer transition-all duration-300 hover:-translate-y-2"
               onClick={() => setModalIdx(idx)}
               onKeyDown={e => { if (e.key==='Enter') setModalIdx(idx) }}
               role="button"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              viewport={{ once: true }}
             >
-              <img src={proj.image} alt={proj.title} className="w-full h-40 object-cover rounded" loading="lazy"/>
-              <h3 className="mt-4 text-xl font-bold">{proj.title}</h3>
-              <p className="text-sm mb-2">{proj.summary}</p>
-              <div className="flex flex-wrap gap-2 mb-3">
-                {proj.tags.map(t => <span key={t} className="bg-blue-100 rounded-full px-2 py-1 text-xs">{t}</span>)}
+              <img 
+                src={proj.image} 
+                alt={proj.title} 
+                className="w-full h-40 object-cover rounded-lg mb-4 transition-transform duration-300 group-hover:scale-[1.02]" 
+                loading="lazy"
+              />
+              <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+                {proj.title}
+              </h3>
+              <p className="text-sm mb-4 text-gray-600 dark:text-gray-400 transition-colors duration-200">
+                {proj.summary}
+              </p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {proj.tags.map(t => (
+                  <span 
+                    key={t} 
+                    className="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full px-3 py-1 text-xs font-medium transition-colors duration-200"
+                  >
+                    {t}
+                  </span>
+                ))}
               </div>
-              <div className="flex gap-2">
-                <a href={proj.links.live} className="text-blue-600 hover:underline focus:underline">Live<ExternalLink className="inline ml-1" /></a>
-                <a href={proj.links.code} className="text-blue-600 hover:underline focus:underline">Code<Github className="inline ml-1" /></a>
+              <div className="flex gap-3">
+                <a 
+                  href={proj.links.live} 
+                  className="text-primary dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 hover:underline focus:underline transition-colors duration-200 inline-flex items-center gap-1"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Live<ExternalLink className="inline ml-1" size={14} />
+                </a>
+                <a 
+                  href={proj.links.code} 
+                  className="text-primary dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 hover:underline focus:underline transition-colors duration-200 inline-flex items-center gap-1"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  Code<Github className="inline ml-1" size={14} />
+                </a>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
-        {/* Modal */}
+        
+        {/* Enhanced Modal with dark theme support */}
         <AnimatePresence>
         {modalIdx !== null && (
           <motion.div
-            initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="fixed z-50 inset-0 flex items-center justify-center bg-black/60"
+            initial={{ opacity: 0 }} 
+            animate={{ opacity: 1 }} 
+            exit={{ opacity: 0 }}
+            className="fixed z-50 inset-0 flex items-center justify-center bg-black/60 dark:bg-black/80 backdrop-blur-sm"
             onClick={() => setModalIdx(null)}
             tabIndex={0}
-            aria-modal="true" role="dialog"
+            aria-modal="true" 
+            role="dialog"
           >
             <motion.div
-              initial={{ scale: .8, opacity: .3 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: .8, opacity: .3 }}
-              className="bg-white rounded-lg shadow-2xl p-8 max-w-lg w-full relative focus:outline-blue-600"
+              initial={{ scale: .8, opacity: .3 }} 
+              animate={{ scale: 1, opacity: 1 }} 
+              exit={{ scale: .8, opacity: .3 }}
+              className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 max-w-2xl w-full mx-4 relative focus:outline-primary border border-gray-200 dark:border-gray-700 backdrop-blur-xl"
               tabIndex={0}
               onClick={e => e.stopPropagation()}
               onKeyDown={e => { if (e.key === 'Escape') setModalIdx(null); }}
             >
-              <button className="absolute top-3 right-3 p-1 bg-slate-100 rounded" onClick={() => setModalIdx(null)} aria-label="Close details">✕</button>
-              <h3 className="mb-2 text-xl font-bold">{filtered[modalIdx].title}</h3>
-              <img src={filtered[modalIdx].image} alt="" className="w-full max-h-48 object-contain rounded mb-3"/>
-              <div className="mb-3 text-sm">{filtered[modalIdx].details}</div>
-              <a href={filtered[modalIdx].links.live} className="inline-block text-blue-600 mr-3">Visit Live</a>
-              <a href={filtered[modalIdx].links.code} className="inline-block text-blue-600">Source Code</a>
+              <button 
+                className="absolute top-4 right-4 p-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full transition-colors duration-200" 
+                onClick={() => setModalIdx(null)} 
+                aria-label="Close details"
+              >
+                <span className="text-gray-600 dark:text-gray-400">✕</span>
+              </button>
+              <h3 className="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100">
+                {filtered[modalIdx].title}
+              </h3>
+              <img 
+                src={filtered[modalIdx].image} 
+                alt="" 
+                className="w-full max-h-64 object-cover rounded-lg mb-6"
+              />
+              <div className="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+                {filtered[modalIdx].details}
+              </div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {filtered[modalIdx].tags.map(tag => (
+                  <span 
+                    key={tag}
+                    className="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-200 rounded-full px-3 py-1 text-sm font-medium"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="flex gap-4">
+                <a 
+                  href={filtered[modalIdx].links.live} 
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+                >
+                  <ExternalLink size={18} />
+                  Visit Live
+                </a>
+                <a 
+                  href={filtered[modalIdx].links.code} 
+                  className="inline-flex items-center gap-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 px-6 py-3 rounded-lg font-semibold transition-colors duration-200"
+                >
+                  <Github size={18} />
+                  Source Code
+                </a>
+              </div>
             </motion.div>
           </motion.div>
         )}

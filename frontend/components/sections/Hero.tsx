@@ -68,26 +68,23 @@ export default function Hero() {
           transition={{ delay: 0.6, duration: 0.8, ease: "easeOut" }}
           className="flex-1 flex items-center justify-center"
         >
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-70 animate-pulse"></div>
-            <div className="relative w-72 h-72 sm:w-80 sm:h-80 bg-card rounded-2xl border border-border shadow-2xl overflow-hidden">
-              {!imageError ? (
-                <Image
-                  src="/images/profile.jpg"
-                  alt="Murtaza Sadriwala - Data Scientist & Software Engineer"
-                  fill
-                  className="object-cover"
-                  priority
-                  onError={() => setImageError(true)}
-                />
-              ) : (
-                <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                  <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center">
-                    <span className="text-4xl font-bold text-primary">MS</span>
-                  </div>
+          <div className="relative w-72 h-72 sm:w-80 sm:h-80">
+            {!imageError ? (
+              <Image
+                src="/images/Murtaza_Updated.png"
+                alt="Murtaza Sadriwala - Data Scientist & Software Engineer"
+                fill
+                className="object-contain hover:scale-105 transition-transform duration-300"
+                priority
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl flex items-center justify-center border border-border shadow-2xl">
+                <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center">
+                  <span className="text-4xl font-bold text-primary">MS</span>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         </motion.div>
       </div>
