@@ -63,17 +63,6 @@ export default function About() {
                   </motion.span>
                 ))}
               </motion.div>
-              
-              <motion.a 
-                href="https://drive.google.com/file/d/1IYbUNttwCezWzIOAmMAzOfzKn9KFukT2/view" 
-                className="mt-6 inline-block px-6 py-3 border-2 border-primary text-primary rounded-lg shadow hover:bg-primary hover:text-white transition-all duration-300 font-medium"
-                target="_blank" 
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Download CV
-              </motion.a>
             </motion.div>
             
             <motion.div 

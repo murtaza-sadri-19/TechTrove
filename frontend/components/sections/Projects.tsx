@@ -278,7 +278,7 @@ const demoProjects = [
     title: 'OCR Research (CRNN + CTC)',
     category: 'ML',
     summary: 'Deep learning-based OCR pipeline for French and multilingual handwritten text recognition with 96.2% accuracy.',
-    image: '/ocr-project.png',
+    image: 'https://via.placeholder.com/400x200/3B82F6/FFFFFF?text=OCR+Research',
     tags: ['TensorFlow', 'CRNN', 'CTC', 'Python', 'Computer Vision'],
     links: { 
       live: 'https://ocr-demo.vercel.app', 
@@ -290,7 +290,7 @@ const demoProjects = [
     title: '6D Pose Estimation',
     category: 'ML',
     summary: 'Research project on deep learning-based perception for space debris tracking using computer vision.',
-    image: '/pose-estimation.png',
+    image: 'https://via.placeholder.com/400x200/8B5CF6/FFFFFF?text=6D+Pose+Estimation',
     tags: ['PyTorch', 'Computer Vision', '3D Geometry', 'Research'],
     links: { 
       live: '#', 
@@ -302,7 +302,7 @@ const demoProjects = [
     title: 'TLC Image Processing',
     category: 'ML',
     summary: 'Automated plate, strip, and spot detection system using YOLO and OpenCV for laboratory automation.',
-    image: '/tlc-detection.png',
+    image: 'https://via.placeholder.com/400x200/10B981/FFFFFF?text=TLC+Detection',
     tags: ['YOLO', 'OpenCV', 'Python', 'Object Detection'],
     links: { 
       live: '#', 
@@ -314,7 +314,7 @@ const demoProjects = [
     title: 'CoderKabila DSA Tracker',
     category: 'Web',
     summary: 'Community-driven DSA practice tracker app with Firebase backend serving 1.2k+ active users.',
-    image: '/coderkabila.png',
+    image: 'https://via.placeholder.com/400x200/F59E0B/FFFFFF?text=CoderKabila',
     tags: ['Flutter', 'Firebase', 'DSA', 'Real-time DB'],
     links: { 
       live: 'https://coderkabila.app', 
@@ -326,7 +326,7 @@ const demoProjects = [
     title: 'Health Survey App',
     category: 'Web',
     summary: 'Kotlin + Firebase survey system for health and education policy planning with 5k+ surveys collected.',
-    image: '/health-survey.png',
+    image: 'https://via.placeholder.com/400x200/EF4444/FFFFFF?text=Health+Survey',
     tags: ['Kotlin', 'Firebase', 'Google Sheets API', 'Analytics'],
     links: { 
       live: '#', 
@@ -338,7 +338,7 @@ const demoProjects = [
     title: 'SmartShop E-commerce',
     category: 'E-commerce',
     summary: 'Full-stack e-commerce platform with ML-powered recommendations and seamless checkout experience.',
-    image: '/smartshop.png',
+    image: 'https://via.placeholder.com/400x200/6366F1/FFFFFF?text=SmartShop+ML',
     tags: ['React', 'Node.js', 'MongoDB', 'TensorFlow.js', 'Stripe'],
     links: { 
       live: 'https://smartshop-demo.vercel.app', 

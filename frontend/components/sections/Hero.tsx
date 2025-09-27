@@ -1,43 +1,62 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import BinaryPhoto from './BinaryPhoto';
+import Image from 'next/image';
 
 export default function Hero() {
+  const [imageError, setImageError] = useState(false);
+
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50/40 via-white/50 to-purple-100/40 dark:from-secondary-900 dark:via-secondary-800 dark:to-purple-900/20 pt-20 pb-16">
+    <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background/80 to-secondary/20 pt-20 pb-16">
       <div className="container max-w-6xl flex flex-col md:flex-row items-center gap-8 lg:gap-12 px-4 sm:px-6">
         <div className="flex-1 flex flex-col gap-6 text-center md:text-left">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight"
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-foreground"
           >
-            Building <span className="bg-gradient-to-r from-blue-600 via-fuchsia-600 to-purple-600 text-transparent bg-clip-text animate-gradient">E-commerce</span> & <span className="bg-gradient-to-r from-red-500 to-indigo-500 text-transparent bg-clip-text animate-gradient animation-delay-1000">ML</span> products
+            Hi, I'm <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent font-extrabold">Murtaza Sadriwala</span>
           </motion.h1>
-          
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.6 }}
+            className="text-xl sm:text-2xl lg:text-3xl font-semibold text-foreground/90 -mt-2"
+          >
+            Data Scientist & Software Engineer
+          </motion.h2>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-xl mx-auto md:mx-0 leading-relaxed"
+            className="text-base sm:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto md:mx-0 leading-relaxed"
           >
-            Full-stack software engineer passionate about crafting performant, ML-driven commerce experiences.
-          </motion.p>
+            Crafting <span className="text-primary font-medium">intelligent</span> & <span className="text-accent font-medium">data-driven</span> solutions through OCR, computer vision, and ML pipelines. 
+            <br />
+            <span className="text-sm sm:text-base mt-2 block">Passionate about turning research into impactful real-world applications.</span>
+          </motion.p>         
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="flex gap-4 mt-3 flex-wrap justify-center md:justify-start"
+            className="flex gap-4 mt-6 flex-wrap justify-center md:justify-start"
           >
-            <a className="btn-secondary rounded-md shadow-lg hover:shadow-xl transition-all duration-300" 
-               href="#contact">
+            <a 
+              className="px-8 py-3 bg-primary text-primary-foreground rounded-lg shadow-lg hover:shadow-xl hover:bg-primary/90 hover:-translate-y-0.5 transition-all duration-300 font-semibold text-sm sm:text-base" 
+              href="#contact"
+            >
               Work With Me
             </a>
-            <a className="btn-secondary rounded-md shadow-lg hover:shadow-xl transition-all duration-300" 
-               href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+            <a 
+              className="px-8 py-3 border-2 border-primary text-primary rounded-lg shadow-lg hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5 transition-all duration-300 font-semibold text-sm sm:text-base" 
+              href="/resume.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               Download Resume
             </a>
           </motion.div>
@@ -50,8 +69,25 @@ export default function Hero() {
           className="flex-1 flex items-center justify-center"
         >
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur-xl opacity-20 animate-pulse"></div>
-            <BinaryPhoto />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-70 animate-pulse"></div>
+            <div className="relative w-72 h-72 sm:w-80 sm:h-80 bg-card rounded-2xl border border-border shadow-2xl overflow-hidden">
+              {!imageError ? (
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Murtaza Sadriwala - Data Scientist & Software Engineer"
+                  fill
+                  className="object-cover"
+                  priority
+                  onError={() => setImageError(true)}
+                />
+              ) : (
+                <div className="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+                  <div className="w-32 h-32 bg-primary/20 rounded-full flex items-center justify-center">
+                    <span className="text-4xl font-bold text-primary">MS</span>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </motion.div>
       </div>
@@ -63,11 +99,11 @@ export default function Hero() {
         transition={{ delay: 1.2 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
-        <div className="w-6 h-10 border-2 border-gray-400 dark:border-gray-600 rounded-full flex justify-center">
+        <div className="w-6 h-10 border-2 border-muted-foreground/40 rounded-full flex justify-center">
           <motion.div
             animate={{ y: [0, 12, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-            className="w-1 h-3 bg-gray-400 dark:bg-gray-600 rounded-full mt-2"
+            className="w-1 h-3 bg-muted-foreground/60 rounded-full mt-2"
           />
         </div>
       </motion.div>

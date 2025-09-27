@@ -27,6 +27,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Skip auth initialization if Firebase is not properly configured
+    if (!auth || typeof auth.onAuthStateChanged !== 'function') {
+      setLoading(false);
+      return;
+    }
+
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setUser(user);
       setLoading(false);
@@ -36,14 +42,23 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const signIn = async (email: string, password: string) => {
+    if (!auth || typeof auth.signInWithEmailAndPassword !== 'function') {
+      throw new Error('Firebase not configured. Please add your Firebase configuration to .env.local');
+    }
     await signInWithEmailAndPassword(auth, email, password);
   };
 
   const signUp = async (email: string, password: string) => {
+    if (!auth || typeof createUserWithEmailAndPassword !== 'function') {
+      throw new Error('Firebase not configured. Please add your Firebase configuration to .env.local');
+    }
     await createUserWithEmailAndPassword(auth, email, password);
   };
 
   const logout = async () => {
+    if (!auth || typeof auth.signOut !== 'function') {
+      throw new Error('Firebase not configured. Please add your Firebase configuration to .env.local');
+    }
     await signOut(auth);
   };
 

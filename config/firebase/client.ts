@@ -5,18 +5,28 @@ import { getStorage } from 'firebase/storage';
 import { getAnalytics } from 'firebase/analytics';
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || 'demo-key',
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || 'demo.firebaseapp.com',
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || 'demo-project',
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || 'demo-project.appspot.com',
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID || '123456789',
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID || '1:123456789:web:demo',
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID || 'G-DEMO',
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase only if we have real configuration
 const shouldInitialize = process.env.NEXT_PUBLIC_FIREBASE_API_KEY && 
-                         process.env.NEXT_PUBLIC_FIREBASE_API_KEY !== 'demo-key';
+                         process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID &&
+                         process.env.NEXT_PUBLIC_FIREBASE_API_KEY.length > 10;
+
+// Debug logging
+if (process.env.NODE_ENV === 'development') {
+  console.log('Firebase Config Status:', {
+    hasApiKey: !!process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+    hasProjectId: !!process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+    shouldInitialize,
+  });
+}
 
 let app: any = null;
 let auth: any = null;
@@ -25,12 +35,24 @@ let storage: any = null;
 let analytics: any = null;
 
 if (shouldInitialize) {
-  app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
-  auth = getAuth(app);
-  db = getFirestore(app);
-  storage = getStorage(app);
-  analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
-} else {
+  try {
+    app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
+    auth = getAuth(app);
+    db = getFirestore(app);
+    storage = getStorage(app);
+    analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
+  } catch (error) {
+    console.warn('Firebase initialization failed:', error);
+    // Fall through to mock objects
+    app = null;
+    auth = null;
+    db = null;
+    storage = null;
+    analytics = null;
+  }
+}
+
+if (!shouldInitialize || !auth) {
   // Create mock objects for development
   auth = {
     currentUser: null,

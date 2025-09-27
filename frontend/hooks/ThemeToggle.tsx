@@ -1,15 +1,14 @@
-// components/ThemeToggle.tsx
 'use client';
-import { useTheme } from './useThemeToggle.tsx';
+import { useThemeToggle } from './useThemeToggle';
 import { Sun, Moon } from 'lucide-react';
 
 export function ThemeToggle() {
-  const { isDark, toggleTheme, mounted } = useTheme();
+  const { isDark, toggleTheme, mounted } = useThemeToggle();
 
   if (!mounted) {
     return (
-      <button className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800">
-        <Sun size={20} />
+      <button className="p-2 rounded-lg bg-muted">
+        <Sun size={20} className="text-muted-foreground" />
       </button>
     );
   }
@@ -17,10 +16,14 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors border border-gray-200 dark:border-gray-700"
+      className="p-2 rounded-lg bg-muted hover:bg-accent transition-colors border border-border"
       aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
     >
-      {isDark ? <Sun size={20} className="text-amber-400" /> : <Moon size={20} className="text-blue-600" />}
+      {isDark ? (
+        <Sun size={20} className="text-foreground" />
+      ) : (
+        <Moon size={20} className="text-foreground" />
+      )}
     </button>
   );
 }
