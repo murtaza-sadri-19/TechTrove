@@ -12,9 +12,10 @@ export default function Contact() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
     
-    // Fixed typo: valueOf -> value
-    if (!form.name.valueOf || !form.email.value || !form.message.value) {
+    // Validate form fields
+    if (!formData.get('name') || !formData.get('email') || !formData.get('message')) {
       alert('All fields required');
       return;
     }
