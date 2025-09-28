@@ -48,7 +48,7 @@ npm run lint
 echo "✅ Development environment setup complete!"
 echo ""
 echo "Next steps:"
-echo "1. Update .env.local with your Firebase and AI API keys"
+echo "1. Update .env.local with your AI API keys (if needed)"
 echo "2. Run 'npm run dev' to start the development server"
 echo "3. Visit http://localhost:3000 to see your portfolio"
 echo ""

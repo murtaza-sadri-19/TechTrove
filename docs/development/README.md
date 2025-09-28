@@ -8,7 +8,7 @@ This guide covers the development workflow and best practices for TechTrove.
 - Node.js 18+
 - npm or yarn
 - Git
-- Firebase CLI
+
 - Code editor (VS Code recommended)
 
 ### Initial Setup
@@ -35,7 +35,7 @@ This guide covers the development workflow and best practices for TechTrove.
 ### Directory Structure
 - `app/` - Next.js App Router pages and layouts
 - `frontend/` - React components and frontend logic
-- `backend/` - Firebase configuration and backend logic
+- `backend/` - Backend configuration (currently unused for personal portfolio)
 - `config/` - Application configuration
 - `docs/` - Documentation files
 - `scripts/` - Development and deployment scripts
@@ -85,7 +85,7 @@ npm run type-check    # TypeScript type checking
 
 ### Development Tools
 - React Developer Tools
-- Firebase Debug View
+
 - Chrome DevTools
 - VS Code Extensions (ES7+ React/Redux/React-Native snippets)
 

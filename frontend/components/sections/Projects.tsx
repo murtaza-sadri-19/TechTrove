@@ -39,9 +39,9 @@
 //     {
 //       id: 4,
 //       title: "CoderKabila",
-//       description: "Community-driven DSA practice tracker app with Firebase backend.",
+//       description: "Community-driven DSA practice tracker app with REST API backend.",
 //       category: ["web"],
-//       tags: ["Flutter", "Firebase", "DSA"],
+//       tags: ["Flutter", "Node.js", "DSA"],
 //       metrics: { users: "1.2k+", uptime: 99.9 },
 //       link: "#",
 //       icon: Smartphone
@@ -49,9 +49,9 @@
 //     {
 //       id: 5,
 //       title: "Health Survey App",
-//       description: "Kotlin + Firebase-based survey system for health and education policy planning.",
+//       description: "Kotlin + REST API-based survey system for health and education policy planning.",
 //       category: ["web"],
-//       tags: ["Kotlin", "Firebase", "Google Sheets API"],
+//       tags: ["Kotlin", "Spring Boot", "Google Sheets API"],
 //       metrics: { surveys: "5k+", analytics: "Real-time" },
 //       link: "https://github.com/murtaza-sadri-19/HealthSurveyAppAndroid",
 //       icon: BarChart

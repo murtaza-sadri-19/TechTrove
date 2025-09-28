@@ -21,7 +21,7 @@ if [ ! -f ".env.local" ]; then
     cp .env.example .env.local
     echo ""
     echo "⚠️  IMPORTANT: Please update .env.local with your actual API keys:"
-    echo "   - Firebase configuration"
+
     echo "   - OpenAI API key"
     echo "   - Hugging Face API key"
     echo "   - Pinecone API key"

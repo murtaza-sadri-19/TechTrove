@@ -85,9 +85,7 @@ Ensure these are set in your production environment:
 NODE_ENV=production
 NEXT_PUBLIC_APP_URL=https://your-domain.com
 
-# Firebase
-NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+
 # ... other Firebase config
 
 # AI Services

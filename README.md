@@ -1,6 +1,6 @@
 # 🚀 TechTrove - AI-Powered Developer Portfolio
 
-A cutting-edge developer portfolio showcasing the seamless integration of modern web technologies with advanced AI capabilities. Built with Next.js 14, styled with Tailwind CSS, and powered by Firebase with AI integrations from OpenAI, Hugging Face, and Pinecone.
+A cutting-edge developer portfolio showcasing the seamless integration of modern web technologies with advanced AI capabilities. Built with Next.js 15, styled with Tailwind CSS, with AI integrations from OpenAI, Hugging Face, and Pinecone.
 
 ![TechTrove Banner](https://via.placeholder.com/1200x400/3B82F6/FFFFFF?text=TechTrove)
 
@@ -8,7 +8,7 @@ A cutting-edge developer portfolio showcasing the seamless integration of modern
 
 - **🎨 Modern UI/UX**: Beautiful, responsive design with Tailwind CSS and Framer Motion animations
 - **🤖 AI Integration**: Powered by OpenAI GPT-4, Hugging Face models, and Pinecone vector database
-- **🔥 Firebase Backend**: Firestore database, Authentication, and Cloud Storage
+
 - **⚡ Next.js 14**: Latest features including App Router, Server Components, and optimizations
 - **📱 Responsive Design**: Mobile-first approach with seamless device compatibility
 - **🔒 Secure**: Proper authentication, security rules, and environment variable management
@@ -25,10 +25,7 @@ A cutting-edge developer portfolio showcasing the seamless integration of modern
 - **Lucide React** - Beautiful icons
 
 ### Backend
-- **Firebase Firestore** - NoSQL database
-- **Firebase Authentication** - User management
-- **Firebase Storage** - File storage
-- **Firebase Functions** - Serverless functions
+
 
 ### AI/ML Services
 - **OpenAI GPT-4** - Language model for intelligent features
@@ -45,7 +42,7 @@ A cutting-edge developer portfolio showcasing the seamless integration of modern
 
 ### Prerequisites
 - Node.js 18+ and npm
-- Firebase account
+
 - OpenAI API key
 - Hugging Face API key
 - Pinecone account
@@ -84,10 +81,7 @@ A cutting-edge developer portfolio showcasing the seamless integration of modern
 Copy `.env.example` to `.env.local` and configure:
 
 ```env
-# Firebase Configuration
-NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-# ... other Firebase config
+
 
 # AI Services
 OPENAI_API_KEY=sk-your_openai_key
@@ -95,9 +89,7 @@ HUGGINGFACE_API_KEY=hf_your_huggingface_token
 PINECONE_API_KEY=your_pinecone_key
 ```
 
-### Firebase Setup
 
-1. Create a Firebase project at [Firebase Console](https://console.firebase.google.com)
 2. Enable Firestore, Authentication, and Storage
 3. Add your domain to authorized domains
 4. Download service account key for admin operations
@@ -121,11 +113,11 @@ TechTrove/
 │   ├── types/             # TypeScript type definitions
 │   └── utils/             # Helper functions
 ├── backend/               # Backend configuration
-│   ├── functions/         # Firebase Functions
+
 │   ├── rules/             # Security rules
 │   └── schemas/           # Data schemas
 ├── config/                # Configuration files
-│   ├── firebase/          # Firebase setup
+
 │   ├── ai/                # AI service configuration
 │   └── env/               # Environment configuration
 ├── public/                # Static assets
@@ -166,7 +158,7 @@ npm run test:watch       # Run tests in watch mode
 npm run test:coverage    # Generate coverage report
 
 # Deployment
-npm run deploy           # Deploy to Firebase
+npm run deploy           # Build for production
 npm run deploy:functions # Deploy only functions
 npm run deploy:hosting   # Deploy only hosting
 
@@ -258,7 +250,7 @@ npm run analyze          # Analyze bundle size
 
 ## 🔒 Security
 
-- Firebase security rules for data protection
+
 - Environment variable validation
 - CORS configuration
 - XSS and CSRF protection
@@ -288,7 +280,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - [Next.js](https://nextjs.org/) for the amazing React framework
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Firebase](https://firebase.google.com/) for backend services
+
 - [OpenAI](https://openai.com/) for AI capabilities
 - [Vercel](https://vercel.com/) for deployment platform
 
