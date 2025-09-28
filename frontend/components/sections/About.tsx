@@ -31,6 +31,18 @@ export default function About() {
     { year: "2023", event: "Skillathon Winner", color: "primary" },
     { year: "2022", event: "ML Internship", color: "accent" }
   ];
+  
+  // Static particle positions to avoid hydration mismatch
+  const particlePositions = [
+    { left: "15%", top: "25%", duration: 4.2, delay: 0.5 },
+    { left: "85%", top: "35%", duration: 5.8, delay: 1.2 },
+    { left: "25%", top: "65%", duration: 4.8, delay: 0.8 },
+    { left: "75%", top: "15%", duration: 5.2, delay: 1.8 },
+    { left: "35%", top: "80%", duration: 4.5, delay: 0.3 },
+    { left: "65%", top: "45%", duration: 5.5, delay: 1.5 },
+    { left: "45%", top: "30%", duration: 4.3, delay: 0.9 },
+    { left: "55%", top: "70%", duration: 5.1, delay: 1.1 }
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -406,13 +418,13 @@ export default function About() {
         </motion.div>
         
         {/* Floating Particles */}
-        {Array.from({ length: 8 }).map((_, i) => (
+        {particlePositions.map((particle, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-primary/30 dark:bg-accent/30 rounded-full pointer-events-none"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: particle.left,
+              top: particle.top,
             }}
             animate={{
               y: [0, -100, 0],
@@ -420,9 +432,9 @@ export default function About() {
               scale: [0, 1.5, 0]
             }}
             transition={{
-              duration: 4 + Math.random() * 2,
+              duration: particle.duration,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: particle.delay,
               ease: "easeInOut"
             }}
           />
