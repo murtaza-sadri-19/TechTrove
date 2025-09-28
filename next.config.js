@@ -4,7 +4,7 @@ const nextConfig = {
     domains: [
       'images.unsplash.com',
       'avatars.githubusercontent.com',
-      'firebasestorage.googleapis.com',
+      'via.placeholder.com',
     ],
     formats: ['image/webp', 'image/avif'],
   },

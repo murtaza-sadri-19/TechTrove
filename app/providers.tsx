@@ -3,7 +3,6 @@
 import { ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ThemeProvider } from 'next-themes';
-import { AuthProvider } from '@/lib/auth';
 import { Toaster } from 'react-hot-toast';
 
 const queryClient = new QueryClient({
@@ -27,7 +26,6 @@ export function Providers({ children }: { children: ReactNode }) {
         disableTransitionOnChange={false}
         storageKey="techtrove-theme"
       >
-        <AuthProvider>
           {children}
           <Toaster
             position="top-right"
@@ -41,7 +39,6 @@ export function Providers({ children }: { children: ReactNode }) {
               },
             }}
           />
-        </AuthProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );

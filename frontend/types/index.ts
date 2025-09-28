@@ -188,8 +188,6 @@ export interface EnvironmentConfig {
   NODE_ENV: 'development' | 'production' | 'test';
   NEXT_PUBLIC_APP_URL: string;
   NEXT_PUBLIC_SITE_NAME: string;
-  NEXT_PUBLIC_FIREBASE_API_KEY: string;
-  NEXT_PUBLIC_FIREBASE_PROJECT_ID: string;
   OPENAI_API_KEY: string;
   HUGGINGFACE_API_KEY: string;
   PINECONE_API_KEY: string;

@@ -42,24 +42,26 @@ export default function Contact() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.15,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94]
       }
     }
   };
 
   return (
-    <section id="contact" className="py-16 lg:py-20 bg-gradient-to-br from-white/50 to-blue-50/30 dark:from-secondary-900/50 dark:to-purple-900/20 transition-colors duration-300">
+    <section id="contact" className="py-16 lg:py-20 bg-gradient-to-br from-background/50 via-background/30 to-secondary/10 dark:from-background/80 dark:via-background/60 dark:to-secondary/20 transition-colors duration-500">
       <div className="container max-w-xl mx-auto px-4 sm:px-6">
         <motion.div
           initial="hidden"
@@ -68,7 +70,7 @@ export default function Contact() {
           variants={containerVariants}
         >
           <motion.h2 
-            className="text-3xl sm:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-primary to-accent-600 bg-clip-text text-transparent"
+            className="text-3xl sm:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
             variants={itemVariants}
           >
             Get In Touch
@@ -77,12 +79,12 @@ export default function Contact() {
           <motion.form 
             ref={formRef} 
             onSubmit={handleSubmit}
-            className="glass-panel p-6 sm:p-8 rounded-2xl shadow-lg border border-gray-200/50 dark:border-gray-700/50 bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl"
+            className="glass-panel p-6 sm:p-8 rounded-2xl shadow-xl border border-border/50 dark:border-border/30 bg-background/60 dark:bg-background/40 backdrop-blur-xl transition-all duration-500"
             variants={itemVariants}
           >
             <div className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-colors duration-200">
+                <label htmlFor="name" className="block text-sm font-medium text-foreground/80 dark:text-foreground/90 mb-1 transition-colors duration-300">
                   Name
                 </label>
                 <input
@@ -90,13 +92,13 @@ export default function Contact() {
                   id="name"
                   name="name"
                   required
-                  className="form-input w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 backdrop-blur-sm transition-all duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/30"
+                  className="form-input w-full px-4 py-3 rounded-lg border border-border dark:border-border/60 bg-background/50 dark:bg-background/30 text-foreground placeholder-muted-foreground backdrop-blur-sm transition-all duration-300 focus:border-primary dark:focus:border-accent focus:ring-2 focus:ring-primary/20 dark:focus:ring-accent/20 hover:border-primary/60 dark:hover:border-accent/60"
                   placeholder="Your Name"
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-colors duration-200">
+                <label htmlFor="email" className="block text-sm font-medium text-foreground/80 dark:text-foreground/90 mb-1 transition-colors duration-300">
                   Email
                 </label>
                 <input
@@ -104,13 +106,13 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
-                  className="form-input w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 backdrop-blur-sm transition-all duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/30"
+                  className="form-input w-full px-4 py-3 rounded-lg border border-border dark:border-border/60 bg-background/50 dark:bg-background/30 text-foreground placeholder-muted-foreground backdrop-blur-sm transition-all duration-300 focus:border-primary dark:focus:border-accent focus:ring-2 focus:ring-primary/20 dark:focus:ring-accent/20 hover:border-primary/60 dark:hover:border-accent/60"
                   placeholder="your.email@example.com"
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1 transition-colors duration-200">
+                <label htmlFor="message" className="block text-sm font-medium text-foreground/80 dark:text-foreground/90 mb-1 transition-colors duration-300">
                   Message
                 </label>
                 <textarea
@@ -118,7 +120,7 @@ export default function Contact() {
                   name="message"
                   required
                   rows={4}
-                  className="form-input w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/50 dark:bg-gray-800/50 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 backdrop-blur-sm transition-all duration-200 focus:border-primary focus:ring-2 focus:ring-primary/20 dark:focus:ring-primary/30 resize-none"
+                  className="form-input w-full px-4 py-3 rounded-lg border border-border dark:border-border/60 bg-background/50 dark:bg-background/30 text-foreground placeholder-muted-foreground backdrop-blur-sm transition-all duration-300 focus:border-primary dark:focus:border-accent focus:ring-2 focus:ring-primary/20 dark:focus:ring-accent/20 hover:border-primary/60 dark:hover:border-accent/60 resize-none"
                   placeholder="Your message..."
                 />
               </div>
@@ -126,9 +128,10 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 disabled={isLoading}
-                className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed bg-gradient-to-r from-primary to-primary-800 hover:from-primary-600 hover:to-primary-900 dark:from-primary-600 dark:to-primary-800 dark:hover:from-primary-500 dark:hover:to-primary-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
-                whileHover={{ scale: isLoading ? 1 : 1.02 }}
+                className="btn-primary w-full flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary dark:from-primary dark:to-accent dark:hover:from-primary/90 dark:hover:to-accent/90 text-primary-foreground dark:text-accent-foreground font-semibold py-3 px-6 rounded-lg transition-all duration-500 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: isLoading ? 1 : 1.02, y: isLoading ? 0 : -1 }}
                 whileTap={{ scale: isLoading ? 1 : 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 {isLoading ? (
                   <>
@@ -154,51 +157,54 @@ export default function Contact() {
             className="mt-8 text-center"
             variants={itemVariants}
           >
-            <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors duration-200">Or reach out directly</p>
+            <p className="text-muted-foreground mb-4 transition-colors duration-300">Or reach out directly</p>
             
             <div className="flex justify-center space-x-4">
               <motion.a
                 href="mailto:murtazasadriwala09@gmail.com"
-                className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 rounded-full hover:from-primary/20 hover:to-accent/20 dark:hover:from-primary/30 dark:hover:to-accent/30 transition-all duration-200 border border-primary/20 dark:border-primary/30"
-                whileHover={{ scale: 1.1, y: -2 }}
+                className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 rounded-full hover:from-primary/20 hover:to-accent/20 dark:hover:from-primary/30 dark:hover:to-accent/30 transition-all duration-300 border border-primary/20 dark:border-accent/30 hover:border-primary/40 dark:hover:border-accent/50 shadow-md hover:shadow-lg"
+                whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 title="Email"
               >
-                <Mail size={20} className="text-primary dark:text-accent transition-colors duration-200" />
+                <Mail size={20} className="text-primary dark:text-accent transition-colors duration-300" />
               </motion.a>
               
               <motion.a
-                href="https://github.com/murtaza09"
+                href="https://github.com/murtaza-sadri-19"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 rounded-full hover:from-primary/20 hover:to-accent/20 dark:hover:from-primary/30 dark:hover:to-accent/30 transition-all duration-200 border border-primary/20 dark:border-primary/30"
-                whileHover={{ scale: 1.1, y: -2 }}
+                className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 rounded-full hover:from-primary/20 hover:to-accent/20 dark:hover:from-primary/30 dark:hover:to-accent/30 transition-all duration-300 border border-primary/20 dark:border-accent/30 hover:border-primary/40 dark:hover:border-accent/50 shadow-md hover:shadow-lg"
+                whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 title="GitHub"
               >
-                <Github size={20} className="text-primary dark:text-accent transition-colors duration-200" />
+                <Github size={20} className="text-primary dark:text-accent transition-colors duration-300" />
               </motion.a>
               
               <motion.a
-                href="https://linkedin.com/in/murtaza-sadri"
+                href="https://www.linkedin.com/in/murtazasadriwala"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 rounded-full hover:from-primary/20 hover:to-accent/20 dark:hover:from-primary/30 dark:hover:to-accent/30 transition-all duration-200 border border-primary/20 dark:border-primary/30"
-                whileHover={{ scale: 1.1, y: -2 }}
+                className="p-3 bg-gradient-to-br from-primary/10 to-accent/10 dark:from-primary/20 dark:to-accent/20 rounded-full hover:from-primary/20 hover:to-accent/20 dark:hover:from-primary/30 dark:hover:to-accent/30 transition-all duration-300 border border-primary/20 dark:border-accent/30 hover:border-primary/40 dark:hover:border-accent/50 shadow-md hover:shadow-lg"
+                whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 title="LinkedIn"
               >
-                <Linkedin size={20} className="text-primary dark:text-accent transition-colors duration-200" />
+                <Linkedin size={20} className="text-primary dark:text-accent transition-colors duration-300" />
               </motion.a>
             </div>
             
             <motion.div className="mt-4">
               <button
                 onClick={copyEmail}
-                className="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-accent transition-colors duration-200"
+                className="text-sm text-muted-foreground hover:text-primary dark:hover:text-accent transition-colors duration-300 hover:underline"
               >
                 murtazasadriwala09@gmail.com
-                {copyMsg && <span className="ml-2 text-green-600 dark:text-green-400">{copyMsg}</span>}
+                {copyMsg && <span className="ml-2 text-green-600 dark:text-green-400 font-medium">{copyMsg}</span>}
               </button>
             </motion.div>
           </motion.div>

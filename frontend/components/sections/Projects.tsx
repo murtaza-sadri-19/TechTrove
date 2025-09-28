@@ -209,26 +209,26 @@ const demoProjects = [
   {
     title: 'CoderKabila DSA Tracker',
     category: 'Web',
-    summary: 'Community-driven DSA practice tracker app with Firebase backend serving 1.2k+ active users.',
+    summary: 'Community-driven DSA practice tracker app with real-time backend serving 1.2k+ active users.',
     image: 'https://via.placeholder.com/400x200/F59E0B/FFFFFF?text=CoderKabila',
-    tags: ['Flutter', 'Firebase', 'DSA', 'Real-time DB'],
+    tags: ['Flutter', 'Node.js', 'DSA', 'Real-time DB'],
     links: { 
       live: 'https://coderkabila.app', 
       code: '#' 
     },
-    details: 'Challenge: Building engaging DSA practice platform. Approach: Flutter app with Firebase real-time database. Results: 1.2k+ users, 99.9% uptime. Features include progress tracking, leaderboards, and collaborative problem solving.',
+    details: 'Challenge: Building engaging DSA practice platform. Approach: Flutter app with Node.js real-time backend. Results: 1.2k+ users, 99.9% uptime. Features include progress tracking, leaderboards, and collaborative problem solving.',
   },
   {
     title: 'Health Survey App',
     category: 'Web',
-    summary: 'Kotlin + Firebase survey system for health and education policy planning with 5k+ surveys collected.',
+    summary: 'Kotlin + REST API survey system for health and education policy planning with 5k+ surveys collected.',
     image: 'https://via.placeholder.com/400x200/EF4444/FFFFFF?text=Health+Survey',
-    tags: ['Kotlin', 'Firebase', 'Google Sheets API', 'Analytics'],
+    tags: ['Kotlin', 'REST API', 'Google Sheets API', 'Analytics'],
     links: { 
       live: '#', 
       code: 'https://github.com/murtaza-sadri-19/HealthSurveyAppAndroid' 
     },
-    details: 'Challenge: Large-scale data collection for policy making. Approach: Android app with Firebase backend and Google Sheets integration. Results: 5k+ surveys, real-time analytics dashboard. Offline-first architecture for rural areas.',
+    details: 'Challenge: Large-scale data collection for policy making. Approach: Android app with REST API backend and Google Sheets integration. Results: 5k+ surveys, real-time analytics dashboard. Offline-first architecture for rural areas.',
   },
   {
     title: 'SmartShop E-commerce',

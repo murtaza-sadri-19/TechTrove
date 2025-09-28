@@ -5,7 +5,7 @@ import { Providers } from './providers';
 export const metadata: Metadata = {
   title: 'TechTrove - Developer Portfolio',
   description: 'Showcasing cutting-edge technology integrations and innovative solutions',
-  keywords: ['portfolio', 'developer', 'AI', 'Next.js', 'Firebase', 'OpenAI'],
+  keywords: ['portfolio', 'developer', 'AI', 'Next.js', 'Machine Learning', 'OpenAI'],
   authors: [{ name: 'Murtaza Sadri' }],
   viewport: 'width=device-width, initial-scale=1',
   robots: 'index, follow',

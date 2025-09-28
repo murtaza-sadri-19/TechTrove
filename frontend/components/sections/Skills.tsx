@@ -34,7 +34,7 @@ export function Skills() {
               <h3 className="text-xl font-semibold mb-4">Backend</h3>
               <ul className="space-y-2 text-muted-foreground">
                 <li><FaNodeJs className="inline mr-2"/> Node.js</li>
-                <li>Firebase (Firestore, Auth)</li>
+                <li>PostgreSQL & MongoDB</li>
                 <li>Express.js</li>
                 <li><FaDatabase className="inline mr-2"/> REST APIs, GraphQL</li>
               </ul>
@@ -70,7 +70,7 @@ export function Skills() {
                 <li><FaDocker className="inline mr-2"/> Docker</li>
                 <li>CI/CD Pipelines</li>
                 <li>Linux & Shell Scripting</li>
-                <li>Vercel & Firebase Hosting</li>
+                <li>Vercel & Netlify</li>
               </ul>
             </div>
           </div>
