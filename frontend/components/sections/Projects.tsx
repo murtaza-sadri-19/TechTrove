@@ -19,10 +19,10 @@ const demoProjects = [
     details: 'Challenge: Recognizing handwritten French text with high accuracy. Approach: CRNN architecture with CTC loss for sequence learning. Results: 96.2% accuracy, 15ms inference time. Used data augmentation and transfer learning for optimal performance.',
   },
   {
-    title: '6D Pose Estimation',
+    title: 'Depth Estimation',
     category: 'ML',
-    summary: 'Research project on deep learning-based perception for space debris tracking using computer vision.',
-    image: 'https://via.placeholder.com/400x200/8B5CF6/FFFFFF?text=6D+Pose+Estimation',
+    summary: 'Research project on deep learning-based Depth Estimation for depth tracking in real time drone flights using computer vision.',
+    image: 'images/Depth_Estimation.jpg',
     tags: ['PyTorch', 'Computer Vision', '3D Geometry', 'Research'],
     links: { 
       live: '#', 
@@ -30,13 +30,13 @@ const demoProjects = [
     },
     showLive: false,
     showCode: false,
-    details: 'Challenge: Accurate 6D pose estimation of space objects. Approach: Custom CNN architecture with geometric constraints. Results: 91.7% precision, 22ms processing time. Implemented quaternion-based rotation representation.',
+    details: 'Challenge: Accurate depth estimation of terrestial objects. Approach: MiDas architecture with Raspberry Cam 3 wide. Results: high precision in depth, low latency depth maps.',
   },
   {
     title: 'TLC Image Processing',
     category: 'ML',
     summary: 'Automated plate, strip, and spot detection system using YOLO and OpenCV for laboratory automation.',
-    image: 'https://via.placeholder.com/400x200/10B981/FFFFFF?text=TLC+Detection',
+    image: 'images/CompuRf.jpg',
     tags: ['YOLO', 'OpenCV', 'Python', 'Object Detection'],
     links: { 
       live: '#', 
@@ -50,44 +50,45 @@ const demoProjects = [
     title: 'CoderKabila DSA Tracker',
     category: 'Web',
     summary: 'Community-driven DSA practice tracker app with real-time backend serving 1.2k+ active users.',
-    image: 'https://via.placeholder.com/400x200/F59E0B/FFFFFF?text=CoderKabila',
+    image: 'images/CoderKabila.png',
     tags: ['Flutter', 'Node.js', 'DSA', 'Real-time DB'],
     links: { 
       live: 'https://coderkabila.app', 
       code: '#' 
     },
-    showLive: true,
+    showLive: false,
     showCode: false,
     details: 'Challenge: Building engaging DSA practice platform. Approach: Flutter app with Node.js real-time backend. Results: 1.2k+ users, 99.9% uptime. Features include progress tracking, leaderboards, and collaborative problem solving.',
   },
   {
     title: 'Health Survey App',
     category: 'Web',
-    summary: 'Kotlin + REST API survey system for health and education policy planning with 5k+ surveys collected.',
-    image: 'https://via.placeholder.com/400x200/EF4444/FFFFFF?text=Health+Survey',
-    tags: ['Kotlin', 'REST API', 'Google Sheets API', 'Analytics'],
+    summary: 'Download from sgsits.ac.in Health Survey App',
+    image: 'images/HealthApp.png',
+    tags: ['Kotlin', 'Firebase', 'Google Sheets API', 'Analytics'],
     links: { 
-      live: '#', 
+      live: 'https://www.sgsits.ac.in/downloads', 
       code: 'https://github.com/murtaza-sadri-19/HealthSurveyAppAndroid' 
     },
     showLive: false,
     showCode: true,
     details: 'Challenge: Large-scale data collection for policy making. Approach: Android app with REST API backend and Google Sheets integration. Results: 5k+ surveys, real-time analytics dashboard. Offline-first architecture for rural areas.',
-  },
-  {
-    title: 'SmartShop E-commerce',
-    category: 'E-commerce',
-    summary: 'Full-stack e-commerce platform with ML-powered recommendations and seamless checkout experience.',
-    image: 'https://via.placeholder.com/400x200/6366F1/FFFFFF?text=SmartShop+ML',
-    tags: ['React', 'Node.js', 'MongoDB', 'TensorFlow.js', 'Stripe'],
-    links: { 
-      live: 'https://smartshop-demo.vercel.app', 
-      code: 'https://github.com/murtaza-sadri-19/smartshop' 
-    },
-    showLive: true,
-    showCode: true,
-    details: 'Challenge: Building scalable e-commerce with personalization. Approach: MERN stack with TensorFlow.js recommendations. Results: 35% conversion increase, sub-100ms API response. Features include real-time inventory, payment processing, and ML recommendations.',
   }
+  // ,
+  // {
+  //   title: 'SmartShop E-commerce',
+  //   category: 'E-commerce',
+  //   summary: 'Full-stack e-commerce platform with ML-powered recommendations and seamless checkout experience.',
+  //   image: 'https://via.placeholder.com/400x200/6366F1/FFFFFF?text=SmartShop+ML',
+  //   tags: ['React', 'Node.js', 'MongoDB', 'TensorFlow.js', 'Stripe'],
+  //   links: { 
+  //     live: 'https://smartshop-demo.vercel.app', 
+  //     code: 'https://github.com/murtaza-sadri-19/smartshop' 
+  //   },
+  //   showLive: true,
+  //   showCode: true,
+  //   details: 'Challenge: Building scalable e-commerce with personalization. Approach: MERN stack with TensorFlow.js recommendations. Results: 35% conversion increase, sub-100ms API response. Features include real-time inventory, payment processing, and ML recommendations.',
+  // }
 ];
 
 const categories = ['All', 'Web', 'ML', 'E-commerce'];
@@ -196,7 +197,7 @@ export default function Projects() {
                 <img 
                   src={proj.image} 
                   alt={proj.title} 
-                  className="w-full h-48 object-cover rounded-2xl mb-6 transition-transform duration-300 group-hover:scale-[1.02]" 
+                  className="w-full h-60 object-cover rounded-2xl mb-6 transition-transform duration-300 group-hover:scale-[1.02]" 
                   loading="lazy"
                 />
                 <h3 className="text-xl lg:text-2xl font-bold mb-4 text-foreground dark:text-foreground transition-colors duration-200">
