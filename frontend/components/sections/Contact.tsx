@@ -95,6 +95,7 @@ export default function Contact() {
                   required
                   className="form-input w-full px-4 py-3 rounded-lg border border-border dark:border-border/60 bg-background/50 dark:bg-background/30 text-foreground placeholder-muted-foreground backdrop-blur-sm transition-all duration-300 focus:border-primary dark:focus:border-accent focus:ring-2 focus:ring-primary/20 dark:focus:ring-accent/20 hover:border-primary/60 dark:hover:border-accent/60"
                   placeholder="Your Name"
+                  suppressHydrationWarning
                 />
               </div>
               
@@ -109,6 +110,7 @@ export default function Contact() {
                   required
                   className="form-input w-full px-4 py-3 rounded-lg border border-border dark:border-border/60 bg-background/50 dark:bg-background/30 text-foreground placeholder-muted-foreground backdrop-blur-sm transition-all duration-300 focus:border-primary dark:focus:border-accent focus:ring-2 focus:ring-primary/20 dark:focus:ring-accent/20 hover:border-primary/60 dark:hover:border-accent/60"
                   placeholder="your.email@example.com"
+                  suppressHydrationWarning
                 />
               </div>
               
@@ -123,6 +125,7 @@ export default function Contact() {
                   rows={4}
                   className="form-input w-full px-4 py-3 rounded-lg border border-border dark:border-border/60 bg-background/50 dark:bg-background/30 text-foreground placeholder-muted-foreground backdrop-blur-sm transition-all duration-300 focus:border-primary dark:focus:border-accent focus:ring-2 focus:ring-primary/20 dark:focus:ring-accent/20 hover:border-primary/60 dark:hover:border-accent/60 resize-none"
                   placeholder="Your message..."
+                  suppressHydrationWarning
                 />
               </div>
               
