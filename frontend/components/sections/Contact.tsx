@@ -2,6 +2,7 @@
 import React, { useRef, useState } from 'react';
 import { Mail, Github, Linkedin, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { trackContactFormSubmit, trackSocialMediaClick } from '../../lib/analytics';
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
@@ -24,6 +25,9 @@ export default function Contact() {
     
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // Track successful form submission
+    trackContactFormSubmit();
     
     setSent(true);
     setIsLoading(false);
@@ -171,6 +175,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 title="Email"
+                onClick={() => trackSocialMediaClick('email')}
               >
                 <Mail size={20} className="text-primary dark:text-accent transition-colors duration-300" />
               </motion.a>
@@ -184,6 +189,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 title="GitHub"
+                onClick={() => trackSocialMediaClick('github')}
               >
                 <Github size={20} className="text-primary dark:text-accent transition-colors duration-300" />
               </motion.a>
@@ -197,6 +203,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.95 }}
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 title="LinkedIn"
+                onClick={() => trackSocialMediaClick('linkedin')}
               >
                 <Linkedin size={20} className="text-primary dark:text-accent transition-colors duration-300" />
               </motion.a>

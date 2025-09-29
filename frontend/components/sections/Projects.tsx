@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { Folder, ExternalLink, Github } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { trackProjectView, trackExternalLink } from '../../lib/analytics'
 
 const demoProjects = [
   {
@@ -182,8 +183,16 @@ export default function Projects() {
               tabIndex={0}
               aria-label={`${proj.title} details`}
               className="glass-panel bg-background/70 dark:bg-background/50 backdrop-blur-2xl border border-border/40 dark:border-border/20 rounded-3xl p-6 lg:p-8 shadow-lg hover:shadow-xl group relative cursor-pointer transition-all duration-300 focus:ring-2 focus:ring-primary/30 dark:focus:ring-accent/30 overflow-hidden"
-              onClick={() => setModalIdx(idx)}
-              onKeyDown={e => { if (e.key==='Enter') setModalIdx(idx) }}
+              onClick={() => {
+                setModalIdx(idx);
+                trackProjectView(proj.title);
+              }}
+              onKeyDown={e => { 
+                if (e.key==='Enter') {
+                  setModalIdx(idx);
+                  trackProjectView(proj.title);
+                }
+              }}
               role="button"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -222,7 +231,10 @@ export default function Projects() {
                   <a 
                     href={proj.links.live} 
                     className="text-primary dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 hover:underline focus:underline transition-colors duration-200 inline-flex items-center gap-1"
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      trackExternalLink(proj.links.live, 'live', proj.title);
+                    }}
                   >
                     Live<ExternalLink className="inline ml-1" size={14} />
                   </a>
@@ -231,7 +243,10 @@ export default function Projects() {
                   <a 
                     href={proj.links.code} 
                     className="text-primary dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 hover:underline focus:underline transition-colors duration-200 inline-flex items-center gap-1"
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      trackExternalLink(proj.links.code, 'code', proj.title);
+                    }}
                   >
                     Code<Github className="inline ml-1" size={14} />
                   </a>

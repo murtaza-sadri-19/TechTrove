@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Calendar, MapPin } from 'lucide-react';
+import { trackExperienceExpand } from '../../lib/analytics';
 
 const jobs = [
   {
@@ -61,7 +62,13 @@ export default function Experience() {
   }, []);
 
   const toggleExpand = (index: number) => {
+    const isExpanding = openIndex !== index;
     setOpenIndex(openIndex === index ? null : index);
+    
+    // Track when expanding (not collapsing)
+    if (isExpanding) {
+      trackExperienceExpand(jobs[index].company);
+    }
   };
 
   // Handle keyboard navigation

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { trackThemeToggle } from '../lib/analytics';
 
 export function useThemeToggle() {
   const [isDark, setIsDark] = useState<boolean>(false);
@@ -27,9 +28,11 @@ export function useThemeToggle() {
     if (newIsDark) {
       document.documentElement.classList.add('dark');
       localStorage.setItem('theme', 'dark');
+      trackThemeToggle('dark');
     } else {
       document.documentElement.classList.remove('dark');
       localStorage.setItem('theme', 'light');
+      trackThemeToggle('light');
     }
   };
 
