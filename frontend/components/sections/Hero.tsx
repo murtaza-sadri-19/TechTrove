@@ -56,7 +56,7 @@ export default function Hero() {
             </motion.a>
             <motion.a 
               className="px-8 py-3 border-2 border-primary text-primary rounded-lg shadow-lg hover:bg-primary hover:text-primary-foreground transition-all duration-500 ease-out font-semibold text-sm sm:text-base" 
-              href="public/Murtaza_Sadriwala_Resume_Cohere.pdf" 
+              href="https://drive.google.com/file/d/1IYbUNttwCezWzIOAmMAzOfzKn9KFukT2/view?usp=drive_link" 
               target="_blank" 
               rel="noopener noreferrer"
               whileHover={{ y: -2, scale: 1.02 }}
