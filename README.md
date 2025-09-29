@@ -1,6 +1,6 @@
 # 🚀 TechTrove - AI-Powered Developer Portfolio
 
-A cutting-edge developer portfolio showcasing the seamless integration of modern web technologies with advanced AI capabilities. Built with Next.js 15, styled with Tailwind CSS, with AI integrations from OpenAI, Hugging Face, and Pinecone.
+A cutting-edge developer portfolio showcasing the seamless integration of modern web technologies with advanced AI capabilities. Built with Next.js 14, styled with Tailwind CSS, with AI integrations from OpenAI, Hugging Face, and Pinecone.
 
 ## ✨ Features
 
