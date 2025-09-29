@@ -203,8 +203,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Murtaza Sadri**
 - GitHub: [@murtaza-sadri-19](https://github.com/murtaza-sadri-19)
-- LinkedIn: [Murtaza Sadri](https://linkedin.com/in/murtaza-sadri)
-- Email: contact@techtrove.dev
+- LinkedIn: [Murtaza Sadri](www.linkedin.com/in/murtazasadriwala)
+- Email: murtazasadriwala09@gmail.com
 
 ## 🙏 Acknowledgments
 
