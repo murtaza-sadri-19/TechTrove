@@ -2,8 +2,6 @@
 
 A cutting-edge developer portfolio showcasing the seamless integration of modern web technologies with advanced AI capabilities. Built with Next.js 15, styled with Tailwind CSS, with AI integrations from OpenAI, Hugging Face, and Pinecone.
 
-![TechTrove Banner](https://via.placeholder.com/1200x400/3B82F6/FFFFFF?text=TechTrove)
-
 ## ✨ Features
 
 - **🎨 Modern UI/UX**: Beautiful, responsive design with Tailwind CSS and Framer Motion animations
@@ -24,14 +22,6 @@ A cutting-edge developer portfolio showcasing the seamless integration of modern
 - **Framer Motion** - Animation library
 - **Lucide React** - Beautiful icons
 
-### Backend
-
-
-### AI/ML Services
-- **OpenAI GPT-4** - Language model for intelligent features
-- **Hugging Face** - Pre-trained ML models
-- **Pinecone** - Vector database for embeddings
-
 ### Development Tools
 - **ESLint & Prettier** - Code quality and formatting
 - **Husky** - Git hooks
@@ -42,10 +32,6 @@ A cutting-edge developer portfolio showcasing the seamless integration of modern
 
 ### Prerequisites
 - Node.js 18+ and npm
-
-- OpenAI API key
-- Hugging Face API key
-- Pinecone account
 
 ### Installation
 
@@ -75,24 +61,6 @@ A cutting-edge developer portfolio showcasing the seamless integration of modern
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 🔧 Configuration
-
-### Environment Variables
-
-Copy `.env.example` to `.env.local` and configure:
-
-```env
-
-
-# AI Services
-OPENAI_API_KEY=sk-your_openai_key
-HUGGINGFACE_API_KEY=hf_your_huggingface_token
-PINECONE_API_KEY=your_pinecone_key
-```
-
-
-2. Enable Firestore, Authentication, and Storage
-3. Add your domain to authorized domains
-4. Download service account key for admin operations
 
 ## 📁 Project Structure
 
@@ -190,28 +158,6 @@ npm run analyze          # Analyze bundle size
    npm run start
    ```
 
-## 🚀 Deployment
-
-### Firebase Hosting
-
-1. **Setup Firebase CLI**
-   ```bash
-   npm install -g firebase-tools
-   firebase login
-   ```
-
-2. **Initialize Firebase (if not done)**
-   ```bash
-   firebase init
-   ```
-
-3. **Deploy**
-   ```bash
-   npm run deploy
-   # or use the script
-   ./scripts/deploy/firebase.sh
-   ```
-
 ### Vercel Deployment
 
 1. **Install Vercel CLI**
@@ -224,22 +170,6 @@ npm run analyze          # Analyze bundle size
    vercel --prod
    ```
 
-## 🤖 AI Features
-
-### OpenAI Integration
-- GPT-4 for intelligent content generation
-- Embeddings for semantic search
-- DALL-E for image generation
-
-### Hugging Face Models
-- Text classification and sentiment analysis
-- Image recognition and captioning
-- Translation and summarization
-
-### Pinecone Vector Database
-- Semantic search capabilities
-- Content recommendations
-- Similar project matching
 
 ## 📊 Performance
 
