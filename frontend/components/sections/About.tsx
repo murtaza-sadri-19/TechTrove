@@ -27,9 +27,9 @@ export default function About() {
   
   const achievements = [
     { year: "2024", event: "Patent Filed", color: "primary" },
-    { year: "2023", event: "Research Project", color: "accent" },
-    { year: "2023", event: "Skillathon Winner", color: "primary" },
-    { year: "2022", event: "ML Internship", color: "accent" }
+    { year: "2024", event: "Research Project", color: "accent" },
+    { year: "2024", event: "Skillathon Winner", color: "primary" },
+    { year: "2025", event: "Research Internship", color: "accent" }
   ];
   
   // Static particle positions to avoid hydration mismatch
