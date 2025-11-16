@@ -56,7 +56,7 @@ export default function Hero() {
             </motion.a>
             <motion.a 
               className="px-8 py-3 border-2 border-primary text-primary rounded-lg shadow-lg hover:bg-primary hover:text-primary-foreground transition-all duration-500 ease-out font-semibold text-sm sm:text-base" 
-              href="https://drive.google.com/file/d/16XshWv5Vp4NU5ZGGhY2dEG_pZOeKhEi3/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1szuVT1UlIpCteQT45GncMzcIzcCYNWvA/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
               whileHover={{ y: -2, scale: 1.02 }}
