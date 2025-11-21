@@ -18,7 +18,7 @@ export function Footer() {
             <Github size={24} />
           </a>
           <a 
-            href="https://linkedin.com/in/murtaza-sadri" 
+            href="https://www.linkedin.com/in/murtazasadriwala" 
             aria-label="LinkedIn" 
             className="text-xl hover:text-primary transition-colors"
             data-testid="footer-linkedin"
