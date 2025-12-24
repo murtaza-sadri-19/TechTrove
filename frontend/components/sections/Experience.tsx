@@ -8,7 +8,7 @@ const jobs = [
   {
     company: 'CloudRaft Technologies',
     role: 'AI Research Intern',
-    period: 'Jul 2024 - Present',
+    period: 'Jul 2025 - Nov 2025',
     location: 'Indore, Madhya Pradesh',
     type: 'Internship',
     color: 'from-blue-500 to-purple-600',
@@ -22,8 +22,8 @@ const jobs = [
   {
     company: 'Sparobix',
     role: 'Research Intern',
-    period: 'Mar 2024 - Aug 2024',
-    location: 'Indore, Madhya Pradesh',
+    period: 'Mar 2025 - Aug 20245',
+    location: 'Remote',
     type: 'Research Associate',
     color: 'from-green-500 to-teal-600',
     skills: ['Computer Vision', 'HOG Descriptors', 'SVM', 'PSO', 'Neural Networks'],
@@ -37,7 +37,7 @@ const jobs = [
   {
     company: 'Compu Rf',
     role: 'Computer Vision Intern',
-    period: 'Mar 2024 - May 2024',
+    period: 'Mar 2025 - May 2025',
     location: 'SGSITS, Indore',
     type: 'Student Researcher',
     color: 'from-orange-500 to-red-600',
