@@ -26,11 +26,11 @@ import pytorch from "./tech/pytorch.png";
 import tensorflow from "./tech/tensorflow.png";
 import firebase from "./tech/firebase.png";
 
-import CloudRaft from "./company/CloudRaft.png"
+import CloudRaft from "./company/Cloudraft.png"
 import sgsits from "./company/sgsits.png"
 import naivedya from "./company/naivedya.png"
 import dhoomketu from "./company/dhoomketu.png"
-import Sparobix from "./company/sparobix.png"
+import Sparobix from "./company/Sparobix.png"
 
 import carrent from "./sections/carrent.png";
 import jobit from "./sections/jobit.png";
