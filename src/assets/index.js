@@ -28,7 +28,7 @@ import firebase from "./tech/firebase.png";
 
 import CloudRaft from "./company/Cloudraft.png"
 import sgsits from "./company/sgsits.png"
-import naivedya from "./company/naivedya.png"
+import naivedya from "./company/naivedya.svg"
 import dhoomketu from "./company/dhoomketu.png"
 import Sparobix from "./company/Sparobix.png"
 

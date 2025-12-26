@@ -45,10 +45,10 @@ const Contact = () => {
           from_name: form.name,
           to_name: "Murtaza",
           form_email: form.email,
-          to_email: "murtazasadriwala09@gmail.com",
+          to_email: ".com",
           message: form.message,
         },
-        "1Assp9vQSKyfpCbV4"
+        "pfCOF163rlNoffWB1"
       )
       .then(
         () => {
