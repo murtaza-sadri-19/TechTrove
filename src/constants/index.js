@@ -1,11 +1,7 @@
 import {
   mobile,
   backend,
-  creator,
   web,
-  reactjs,
-  tailwind,
-  nodejs,
   mongodb,
   git,
   docker,
@@ -14,20 +10,12 @@ import {
   firebase,
   tensorflow,
   pytorch,
-  threejs,
-  hackathon,
-  netflix,
-  scholarly,
   CloudRaft,
   sgsits,
   naivedya,
   dhoomketu,
   Sparobix,
-  CoderKabila,
-  CompuRf,
   Depth_Estimator,
-  HealthApp,
-  Lexicon,
   truthtrack
 } from "../assets";
 
@@ -87,27 +75,9 @@ const technologies = [
     name: "Firebase",
     icon: firebase,
   },
-
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
   {
     name: "MongoDB",
     icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
   },
   {
     name: "git",
