@@ -124,7 +124,7 @@ const technologies = [
   {
     name: "Pytorch",
     icon: pytorch,
-  },
+  }
 ];
 
 const experiences = [
