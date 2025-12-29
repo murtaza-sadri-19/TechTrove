@@ -29,6 +29,7 @@ const Contact = () => {
               target={link.name !== "Email" ? "_blank" : "_self"}
               rel="noopener noreferrer"
               className={`relative p-6 rounded-2xl transition-transform transform hover:scale-105 w-full h-full flex flex-col items-center justify-center text-center bg-gradient-to-br ${link.bgGradient} shadow-lg`}
+              title={link.username}
             >
               <div className="flex-grow flex flex-col items-center justify-center">
                 <img

@@ -239,6 +239,7 @@ const contactLinks = [
     color: "#00d4ff",
     description: "Check out my projects",
     bgGradient: "from-blue-900/20 to-cyan-900/20",
+    username: "murtaza-sadri-19",
   },
   {
     name: "Email",
@@ -247,6 +248,7 @@ const contactLinks = [
     color: "#bf61ff",
     description: "Send me an email",
     bgGradient: "from-purple-900/20 to-pink-900/20",
+    username: "murtazasadriwala09@gmail.com",
   },
   {
     name: "LinkedIn",
@@ -255,6 +257,7 @@ const contactLinks = [
     color: "#00cea8",
     description: "Connect with me",
     bgGradient: "from-green-900/20 to-cyan-900/20",
+    username: "murtazasadriwala",
   },
 ];
 
