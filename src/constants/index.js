@@ -15,8 +15,11 @@ import {
   naivedya,
   dhoomketu,
   Sparobix,
-  Depth_Estimator,
-  truthtrack
+  HealthApp,
+  truthtrack,
+  githubIcon,
+  gmailIcon,
+  linkedinIcon,
 } from "../assets";
 
 export const introAnimatedText = [
@@ -212,20 +215,47 @@ const projects = [
       },
     ],
     image: truthtrack, // Reference your asset here
-    source_code_link: "https://github.com/murtaza-sadri-19/TruthTrack",
+    source_code_link: "https://github.com/murtaza-sadri-19/Truthtrack-AI-News-Vigilance",
   },
   {
-    name: "Depth Estimation Research",
+    name: "Health Survey App",
     description:
-      "A deep learning-based system for real-time drone flights using the MiDas architecture. Achieved high-precision depth maps of terrestrial objects with low latency on Raspberry Pi hardware.",
+      "HealthSurveyAppAndroid is an Android application for collecting health survey data. The app features a user-friendly interface for data entry, offline capabilities for remote areas, and secure data storage. It aims to streamline health data collection.",
     tags: [
       { name: "pytorch", color: "blue-text-gradient" },
       { name: "computer-vision", color: "green-text-gradient" },
       { name: "midas", color: "pink-text-gradient" },
     ],
-    image: Depth_Estimator,
-    source_code_link: "https://github.com/murtaza-sadri-19/DepthEstimation"
+    image: HealthApp, // Reference your asset here
+    source_code_link: "https://github.com/murtaza-sadri-19/HealthSurveyAppAndroid"
   }
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+const contactLinks = [
+  {
+    name: "GitHub",
+    icon: githubIcon,
+    url: "https://github.com/murtaza-sadri-19",
+    color: "#00d4ff",
+    description: "Check out my projects",
+    bgGradient: "from-blue-900/20 to-cyan-900/20",
+  },
+  {
+    name: "Email",
+    icon: gmailIcon,
+    url: "mailto:murtazasadriwala09@gmail.com",
+    color: "#bf61ff",
+    description: "Send me an email",
+    bgGradient: "from-purple-900/20 to-pink-900/20",
+  },
+  {
+    name: "LinkedIn",
+    icon: linkedinIcon,
+    url: "https://www.linkedin.com/in/murtazasadriwala/",
+    color: "#00cea8",
+    description: "Connect with me",
+    bgGradient: "from-green-900/20 to-cyan-900/20",
+  },
+];
+
+export { services, technologies, experiences, testimonials, projects, contactLinks};

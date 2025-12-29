@@ -23,7 +23,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[340px] w-full"
+        className="bg-tertiary p-5 rounded-2xl sm:w-[340px] w-full pop-card pop-shadow shine-effect"
       >
         <div className="relative w-full h-[230px]">
           {/* Displaying the project image */}
@@ -37,7 +37,7 @@ const ProjectCard = ({
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
               onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300"
             >
               <img
                 src={github}
@@ -59,7 +59,7 @@ const ProjectCard = ({
           {tags.map((tag) => (
             <p
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
+              className={`text-[14px] ${tag.color} px-2 py-1 rounded-lg bg-opacity-10 backdrop-blur-sm transition-all duration-300 hover:scale-105`}
             >
               #{tag.name}
             </p>

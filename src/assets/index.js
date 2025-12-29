@@ -7,24 +7,14 @@ import github from "./sections/github.png";
 import menu from "./sections/menu.svg";
 import close from "./sections/close.svg";
 
-import css from "./tech/css.png";
-import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
-import git from "./tech/git.png";
-import html from "./tech/html.png";
-import javascript from "./tech/javascript.png";
-import mongodb from "./tech/mongodb.png";
-import nodejs from "./tech/nodejs.png";
-import reactjs from "./tech/reactjs.png";
-import redux from "./tech/redux.png";
-import tailwind from "./tech/tailwind.png";
-import typescript from "./tech/typescript.png";
-import threejs from "./tech/threejs.svg";
-import python from "./tech/python.png";
-import java from "./tech/java.png";
-import pytorch from "./tech/pytorch.png";
-import tensorflow from "./tech/tensorflow.png";
-import firebase from "./tech/firebase.png";
+import docker from "./tech/docker.webp";
+import git from "./tech/git.webp";
+import mongodb from "./tech/mongodb.webp";
+import python from "./tech/python.webp";
+import java from "./tech/java.webp";
+import pytorch from "./tech/pytorch.webp";
+import tensorflow from "./tech/tensorflow.webp";
+import firebase from "./tech/firebase.webp";
 
 import CloudRaft from "./company/Cloudraft.png"
 import sgsits from "./company/sgsits.png"
@@ -46,6 +36,10 @@ import HealthApp from "./projects/HealthApp.png";
 import Lexicon from "./projects/LexiconVakhya.png";
 import truthtrack from "./projects/truthtrack.png";
 
+import githubIcon from "./connect/github.svg";
+import gmailIcon from "./connect/gmail.svg";
+import linkedinIcon from "./connect/linkedin.svg";
+
 export {
   logo,
   backend,
@@ -55,19 +49,9 @@ export {
   github,
   menu,
   close,
-  css,
   docker,
-  figma,
   git,
-  html,
-  javascript,
   mongodb,
-  nodejs,
-  reactjs,
-  redux,
-  tailwind,
-  typescript,
-  threejs,
   python,
   java,
   firebase,
@@ -90,4 +74,7 @@ export {
   HealthApp,
   Lexicon,
   truthtrack,
+  githubIcon,
+  gmailIcon,
+  linkedinIcon,
 };
