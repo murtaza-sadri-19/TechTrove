@@ -10,11 +10,11 @@ import close from "./sections/close.svg";
 import docker from "./tech/docker.webp";
 import git from "./tech/git.webp";
 import mongodb from "./tech/mongodb.webp";
-import python from "./tech/python.webp";
+import python from "./tech/python.svg";
 import java from "./tech/java.webp";
 import pytorch from "./tech/pytorch.webp";
 import tensorflow from "./tech/tensorflow.webp";
-import firebase from "./tech/firebase.webp";
+import firebase from "./tech/firebase.svg";
 
 import CloudRaft from "./company/Cloudraft.png"
 import sgsits from "./company/sgsits.png"
