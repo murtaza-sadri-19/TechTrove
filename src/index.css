@@ -310,3 +310,30 @@
 .tech-tile:hover {
   transform: perspective(900px) rotateX(6deg) rotateY(-6deg) scale(1.03);
 }
+
+/* Deployment Badge Styles */
+.deployment-badge {
+  width: 100%;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.8) 0%, rgba(191, 97, 255, 0.8) 100%);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(0, 212, 255, 0.5);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.deployment-badge:hover {
+  box-shadow: 0 6px 25px rgba(0, 212, 255, 0.5);
+  border-color: rgba(0, 212, 255, 0.8);
+}

@@ -214,8 +214,8 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: truthtrack, // Reference your asset here
-    source_code_link: "https://github.com/murtaza-sadri-19/Truthtrack-AI-News-Vigilance",
+    image: truthtrack,
+    deploymentStatus: "Deploying soon",
   },
   {
     name: "Health Survey App",

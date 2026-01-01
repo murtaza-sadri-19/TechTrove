@@ -13,6 +13,7 @@ const ProjectCard = ({
   description,
   source_code_link,
   tags,
+  deploymentStatus,
 }) => {
   return (
     // Applying Framer Motion animation to the component
@@ -23,7 +24,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[340px] w-full pop-card pop-shadow shine-effect"
+        className="bg-tertiary p-5 rounded-2xl sm:w-[340px] w-full pop-card pop-shadow"
       >
         <div className="relative w-full h-[230px]">
           {/* Displaying the project image */}
@@ -34,19 +35,28 @@ const ProjectCard = ({
           />
 
           {/* Displaying the GitHub icon for source code link */}
-          <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300"
-            >
-              <img
-                src={github}
-                alt="source code"
-                className="w-1/2 h-1/2 object-contain"
-              />
+          {source_code_link && (
+            <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+              <div
+                onClick={() => window.open(source_code_link, "_blank")}
+                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300"
+              >
+                <img
+                  src={github}
+                  alt="source code"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+              </div>
             </div>
-          </div>
+          )}
         </div>
+
+        {/* Deployment Status Badge Below Image */}
+        {deploymentStatus && (
+          <div className="deployment-badge">
+            {deploymentStatus}
+          </div>
+        )}
 
         <div className="mt-5">
           {/* Displaying the project name and description */}
