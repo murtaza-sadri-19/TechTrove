@@ -71,7 +71,6 @@ const ComputersCanvas = () => {
       shadows  
       camera={{position: [20, 3, 8], fov: 25}} 
       gl={{ 
-        preserveDrawingBuffer: true,
         antialias: true,
         alpha: true
       }}
