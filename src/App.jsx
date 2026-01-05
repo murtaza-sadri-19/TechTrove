@@ -1,19 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { About, Contact , Experience, Hero, Navbar, Tech, Works, StarsCanvas } from './components'; 
 import Intro from './Pages/Intro/Intro'
-import { initializeGoogleAnalytics } from './utils/analytics';
 
 const App = () => {
-  useEffect(() => {
-    // Initialize Google Analytics - Replace 'G-XXXXXXXXXX' with your GA4 ID
-    // Get your GA4 ID from: https://analytics.google.com/
-    const GA4_ID = import.meta.env.VITE_GA4_ID || 'G-XXXXXXXXXX';
-    if (GA4_ID !== 'G-XXXXXXXXXX') {
-      initializeGoogleAnalytics(GA4_ID);
-    }
-  }, []);
-
   return (
     <BrowserRouter>
       <div className='relative z-0 bg-primary'>
