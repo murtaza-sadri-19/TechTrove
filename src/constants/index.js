@@ -69,34 +69,42 @@ const technologies = [
   {
     name: "Python",
     icon: python,
-  },
-  {
-    name: "Tensorflow",
-    icon: tensorflow,
-  },
-  {
-    name: "Firebase",
-    icon: firebase,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "git",
-    icon: git,
+    category: "Core Stack"
   },
   {
     name: "Java",
     icon: java,
+    category: "Core Stack"
   },
   {
-    name: "Docker",
-    icon: docker,
+    name: "Tensorflow",
+    icon: tensorflow,
+    category: "Core Stack"
   },
   {
     name: "Pytorch",
     icon: pytorch,
+    category: "Core Stack"
+  },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+    category: "Core Stack"
+  },
+  {
+    name: "Firebase",
+    icon: firebase,
+    category: "Core Stack"
+  },
+  {
+    name: "git",
+    icon: git,
+    category: "Tools"
+  },
+  {
+    name: "Docker",
+    icon: docker,
+    category: "Tools"
   }
 ];
 
