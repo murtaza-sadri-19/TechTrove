@@ -1,0 +1,21 @@
+/* humanstxt.org */
+
+/* TEAM */
+Developer: Murtaza Sadriwala
+Site: https://tech-trove-murtaza-sadriwala.vercel.app/
+Twitter: @murtaza_sadriwala
+Location: Greater Noida, India
+
+/* SITE */
+Last Updated: 2026-01-05
+Standards: HTML5, CSS3, JavaScript (ES6+)
+Components: React, Three.js, Framer Motion, Tailwind CSS
+Hosting: Vercel
+
+/* TECHNOLOGY */
+Framework: React 18+
+Build Tool: Vite
+Styling: Tailwind CSS
+3D Graphics: Three.js
+Animations: Framer Motion
+Email Service: EmailJS
