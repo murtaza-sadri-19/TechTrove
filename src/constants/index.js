@@ -230,9 +230,9 @@ const projects = [
     description:
       "HealthSurveyAppAndroid is an Android application for collecting health survey data. The app features a user-friendly interface for data entry, offline capabilities for remote areas, and secure data storage. It aims to streamline health data collection.",
     tags: [
-      { name: "pytorch", color: "blue-text-gradient" },
-      { name: "computer-vision", color: "green-text-gradient" },
-      { name: "midas", color: "pink-text-gradient" },
+      { name: "backend", color: "blue-text-gradient" },
+      { name: "database", color: "green-text-gradient" },
+      { name: "integrations", color: "pink-text-gradient" },
     ],
     image: HealthApp, // Reference your asset here
     source_code_link: "https://github.com/murtaza-sadri-19/HealthSurveyAppAndroid"
