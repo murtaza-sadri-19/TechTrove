@@ -1,7 +1,7 @@
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { github } from "../assets";
+import { github, play } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
@@ -14,6 +14,7 @@ const ProjectCard = ({
   source_code_link,
   tags,
   deploymentStatus,
+  deploymentLink,
 }) => {
   return (
     // Applying Framer Motion animation to the component
@@ -35,18 +36,32 @@ const ProjectCard = ({
           />
 
           {/* Displaying the GitHub icon for source code link */}
-          {source_code_link && (
+          {(source_code_link || deploymentLink) && (
             <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-              <div
-                onClick={() => window.open(source_code_link, "_blank")}
-                className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300"
-              >
-                <img
-                  src={github}
-                  alt="source code"
-                  className="w-1/2 h-1/2 object-contain"
-                />
-              </div>
+              {source_code_link && (
+                <div
+                  onClick={() => window.open(source_code_link, "_blank")}
+                  className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300"
+                >
+                  <img
+                    src={github}
+                    alt="source code"
+                    className="w-1/2 h-1/2 object-contain"
+                  />
+                </div>
+              )}
+              {deploymentLink && (
+                <div
+                  onClick={() => window.open(deploymentLink, "_blank")}
+                  className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300"
+                >
+                  <img
+                    src={play}
+                    alt="deployment link"
+                    className="w-1/2 h-1/2 object-contain"
+                  />
+                </div>
+              )}
             </div>
           )}
         </div>
