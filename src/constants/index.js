@@ -205,7 +205,7 @@ const testimonials = [
 
 const projects = [
   {
-    name: "TruthTrack: News Vigilance",
+    name: "Veritify: AI News Vigilance",
     description:
       "A production-grade news verification system that utilizes semantic retrieval and contextual reasoning to identify misinformation. Recognized as Top 25 nationally at the ICEA TruthTell Hackathon.",
     tags: [
@@ -223,7 +223,9 @@ const projects = [
       },
     ],
     image: truthtrack,
-    deploymentStatus: "Deploying soon",
+    source_code_link: "https://github.com/murtaza-sadri-19/Veritify-AI-News-Vigilance",
+    deploymentStatus: "Deployed",
+    deploymentLink: "https://huggingface.co/spaces/murtaza19/Veritify-News-Vigilance"
   },
   {
     name: "Health Survey App",
