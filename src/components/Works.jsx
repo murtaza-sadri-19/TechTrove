@@ -27,40 +27,45 @@ const ProjectCard = ({
         }}
         className="bg-tertiary p-5 rounded-2xl sm:w-[340px] w-full pop-card pop-shadow"
       >
-        <div className="relative w-full h-[230px]">
+        <div className="relative w-full h-[300px] overflow-hidden rounded-2xl group">
           {/* Displaying the project image */}
           <img
             src={image}
             alt="project_image"
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-full object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
           />
+
+          {/* Dark overlay on hover */}
+          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 rounded-2xl" />
 
           {/* Displaying the GitHub icon for source code link */}
           {(source_code_link || deploymentLink) && (
-            <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
+            <div className="absolute inset-0 flex justify-end items-end gap-2 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {source_code_link && (
-                <div
+                <button
                   onClick={() => window.open(source_code_link, "_blank")}
-                  className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300"
+                  className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300 hover:shadow-lg hover:shadow-cyan-500/50 border border-cyan-300/50"
+                  title="View Source Code"
                 >
                   <img
                     src={github}
                     alt="source code"
-                    className="w-1/2 h-1/2 object-contain"
+                    className="w-6 h-6 object-contain"
                   />
-                </div>
+                </button>
               )}
               {deploymentLink && (
-                <div
+                <button
                   onClick={() => window.open(deploymentLink, "_blank")}
-                  className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300"
+                  className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300 hover:shadow-lg hover:shadow-pink-500/50 border border-pink-300/50"
+                  title="View Live Demo"
                 >
                   <img
                     src={demo}
                     alt="deployment link"
-                    className="w-1/2 h-1/2 object-contain"
+                    className="w-6 h-6 object-contain"
                   />
-                </div>
+                </button>
               )}
             </div>
           )}
@@ -75,19 +80,20 @@ const ProjectCard = ({
 
         <div className="mt-5">
           {/* Displaying the project name and description */}
-          <h3 className="text-white font-bold text-[24px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+          <h3 className="text-white font-bold text-[22px] lg:text-[24px] leading-tight hover:text-cyan-400 transition-colors duration-300">{name}</h3>
+          <p className="mt-3 text-secondary text-[14px] leading-relaxed">{description}</p>
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {/* Displaying project tags */}
           {tags.map((tag) => (
-            <p
+            <motion.p
               key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color} px-2 py-1 rounded-lg bg-opacity-10 backdrop-blur-sm transition-all duration-300 hover:scale-105`}
+              whileHover={{ scale: 1.08 }}
+              className={`text-[13px] ${tag.color} px-3 py-1.5 rounded-full bg-opacity-20 backdrop-blur-sm transition-all duration-300 border border-opacity-30 hover:border-opacity-60 font-medium`}
             >
               #{tag.name}
-            </p>
+            </motion.p>
           ))}
         </div>
       </Tilt>
