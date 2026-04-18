@@ -6,6 +6,7 @@ import web from "./sections/web.png";
 import github from "./sections/github.png";
 import menu from "./sections/menu.svg";
 import close from "./sections/close.svg";
+import demo from "./sections/demo.png";
 
 import docker from "./tech/docker.webp";
 import git from "./tech/git.webp";
@@ -49,6 +50,7 @@ export {
   github,
   menu,
   close,
+  demo,
   docker,
   git,
   mongodb,
