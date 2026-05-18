@@ -110,9 +110,10 @@ const technologies = [
 
 const experiences = [
   {
+    type: "internship",
     title: "AI Research Intern",
     company_name: "CloudRaft",
-    icon: CloudRaft, // Ensure you have this icon in your assets
+    icon: CloudRaft,
     iconBg: "#fff",
     date: "July 2025 - Nov 2025",
     points: [
@@ -123,9 +124,10 @@ const experiences = [
     ],
   },
   {
+    type: "internship",
     title: "Research Intern",
     company_name: "Sparobix",
-    icon: Sparobix, // Ensure you have this icon in your assets
+    icon: Sparobix,
     iconBg: "#111111",
     date: "March 2025 - August 2025",
     points: [
@@ -136,9 +138,10 @@ const experiences = [
     ],
   },
   {
+    type: "internship",
     title: "AI & Backend Developer",
     company_name: "CompuRf (SGSITS)",
-    icon: sgsits, // Ensure you have this icon in your assets
+    icon: sgsits,
     iconBg: "#E6DEDD",
     date: "March 2025 - May 2025",
     points: [
@@ -149,9 +152,10 @@ const experiences = [
     ],
   },
   {
+    type: "por",
     title: "Head Electronics & Web Development",
     company_name: "Team Naivedya (TIFAN)",
-    icon: naivedya, // Ensure you have this icon in your assets
+    icon: naivedya,
     iconBg: "#fff",
     date: "Sept 2023 - Sept 2025",
     points: [
@@ -162,9 +166,10 @@ const experiences = [
     ],
   },
   {
+    type: "por",
     title: "Technical Team Member",
     company_name: "Team Dhoomketu",
-    icon: dhoomketu, // Ensure you have this icon in your assets
+    icon: dhoomketu,
     iconBg: "#111111",
     date: "Feb 2024 - June 2024",
     points: [
