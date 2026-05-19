@@ -151,10 +151,13 @@ const experiences = [
       "Reduced manual analysis time by 80% and errors by 30% through real-time lab automation logic.",
     ],
   },
+];
+
+const positionsOfResponsibility = [
   {
     type: "por",
     title: "Head Electronics & Web Development",
-    company_name: "Team Naivedya (TIFAN)",
+    organization: "Team Naivedya (TIFAN)",
     icon: naivedya,
     iconBg: "#fff",
     date: "Sept 2023 - Sept 2025",
@@ -168,7 +171,7 @@ const experiences = [
   {
     type: "por",
     title: "Technical Team Member",
-    company_name: "Team Dhoomketu",
+    organization: "Team Dhoomketu",
     icon: dhoomketu,
     iconBg: "#111111",
     date: "Feb 2024 - June 2024",
@@ -276,4 +279,4 @@ const contactLinks = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects, contactLinks};
+export { services, technologies, experiences, positionsOfResponsibility, testimonials, projects, contactLinks};

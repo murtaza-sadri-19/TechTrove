@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { About, Contact , Experience, Hero, Navbar, Tech, Works, StarsCanvas } from './components'; 
+import { About, Contact , Experience, Hero, Navbar, Tech, Works, StarsCanvas, positions } from './components'; 
 import Intro from './Pages/Intro/Intro'
 
 const App = () => {

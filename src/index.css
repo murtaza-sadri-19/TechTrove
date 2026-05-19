@@ -459,8 +459,6 @@ a {
 .vertical-timeline {
   width: 100%;
   position: relative;
-  display: flex !important;
-  flex-direction: column !important;
   min-height: auto !important;
 }
 
@@ -470,7 +468,6 @@ a {
 
 /* Force vertical timeline elements to be visible */
 .vertical-timeline-element {
-  display: flex !important;
   visibility: visible !important;
   opacity: 1 !important;
   margin: 20px 0 !important;
