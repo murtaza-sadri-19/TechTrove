@@ -8,14 +8,18 @@ import { fadeIn, textVariant } from '../utils/motion';
 const TechIcon = ({ index, name, icon, category }) => {
   const getCategoryColor = (cat) => {
     switch(cat) {
-      case "Core Stack":
-        return "from-cyan-500/20 to-blue-500/20 border-cyan-500/30";
-      case "Tools":
-        return "from-purple-500/20 to-pink-500/20 border-purple-500/30";
-      case "Design":
-        return "from-orange-500/20 to-red-500/20 border-orange-500/30";
+      case "Languages":
+        return "from-amber-500/20 to-orange-500/20 border-amber-500/30";
+      case "AI/ML":
+        return "from-emerald-500/20 to-green-500/20 border-emerald-500/30";
+      case "Backend":
+        return "from-rose-500/20 to-red-500/20 border-rose-500/30";
+      case "Cloud & DevOps":
+        return "from-sky-500/20 to-blue-500/20 border-sky-500/30";
+      case "Databases":
+        return "from-violet-500/20 to-purple-500/20 border-violet-500/30";
       default:
-        return "from-blue-500/20 to-cyan-500/20 border-blue-500/30";
+        return "from-stone-500/20 to-gray-500/20 border-stone-500/30";
     }
   };
 
@@ -40,14 +44,18 @@ const TechIcon = ({ index, name, icon, category }) => {
 const CategorySection = ({ category, techs }) => {
   const getCategoryBorder = (cat) => {
     switch(cat) {
-      case "Core Stack":
-        return "border-l-4 border-cyan-500";
-      case "Tools":
-        return "border-l-4 border-purple-500";
-      case "Design":
-        return "border-l-4 border-orange-500";
+      case "Languages":
+        return "border-l-4 border-amber-500";
+      case "AI/ML":
+        return "border-l-4 border-emerald-500";
+      case "Backend":
+        return "border-l-4 border-rose-500";
+      case "Cloud & DevOps":
+        return "border-l-4 border-sky-500";
+      case "Databases":
+        return "border-l-4 border-violet-500";
       default:
-        return "border-l-4 border-blue-500";
+        return "border-l-4 border-stone-500";
     }
   };
 
@@ -75,10 +83,11 @@ const CategorySection = ({ category, techs }) => {
 };
 
 const Tech = () => {
-  // Group technologies by category
-  const coreStack = technologies.filter(t => t.category === "Core Stack");
-  const tools = technologies.filter(t => t.category === "Tools");
-  const design = technologies.filter(t => t.category === "Design");
+  const languages = technologies.filter(t => t.category === "Languages");
+  const aiml = technologies.filter(t => t.category === "AI/ML");
+  const backend = technologies.filter(t => t.category === "Backend");
+  const cloud = technologies.filter(t => t.category === "Cloud & DevOps");
+  const databases = technologies.filter(t => t.category === "Databases");
 
   return (
     <>
@@ -88,12 +97,14 @@ const Tech = () => {
       </motion.div>
 
       <div className="mt-20 w-full space-y-12">
-        {coreStack.length > 0 && <CategorySection category="Core Stack" techs={coreStack} />}
-        {tools.length > 0 && <CategorySection category="Tools" techs={tools} />}
-        {design.length > 0 && <CategorySection category="Design" techs={design} />}
+        {languages.length > 0 && <CategorySection category="Languages" techs={languages} />}
+        {aiml.length > 0 && <CategorySection category="AI/ML" techs={aiml} />}
+        {backend.length > 0 && <CategorySection category="Backend" techs={backend} />}
+        {cloud.length > 0 && <CategorySection category="Cloud & DevOps" techs={cloud} />}
+        {databases.length > 0 && <CategorySection category="Databases" techs={databases} />}
       </div>
     </>
   );
 };
 
-export default SectionWrapper(Tech, "");
+export default SectionWrapper(Tech, "tech");

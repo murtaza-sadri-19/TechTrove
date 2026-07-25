@@ -4,7 +4,6 @@ import "./styles.css"
 import ScramblingText from '../../components/ScramblingText/ScramblingText';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { introAnimatedText, myName, shortDescription } from "../../constants/index";
-// import { Link } from 'react-router-dom'
 
 const Intro = () => {
 

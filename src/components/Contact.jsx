@@ -24,13 +24,13 @@ const Contact = () => {
         <div className="mt-12 mb-12">
           <a
             href="mailto:murtazasadriwala09@gmail.com"
-            className="inline-block px-8 py-4 bg-gradient-to-r from-[#00d4ff] via-[#bf61ff] to-[#00cea8] rounded-lg font-bold text-white text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-[#00d4ff]"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-accent via-accent-warm to-accent-secondary rounded-lg font-bold text-white text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 border-2 border-transparent hover:border-accent"
           >
             Get In Touch
           </a>
         </div>
 
-        {/* Grid container for contact links - Reduced visual weight */}
+        {/* Grid container for contact links */}
         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {contactLinks.map((link, index) => (
             <a

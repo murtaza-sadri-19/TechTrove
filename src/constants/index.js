@@ -10,11 +10,20 @@ import {
   firebase,
   tensorflow,
   pytorch,
+  javascript,
+  sql,
+  spring,
+  fastapi,
+  flask,
+  azure,
+  postgresql,
+  mysql,
+  bash,
+  cicd,
   CloudRaft,
   sgsits,
-  naivedya,
-  dhoomketu,
   Sparobix,
+  MuktaLabs,
   HealthApp,
   truthtrack,
   githubIcon,
@@ -25,10 +34,10 @@ import {
 export const introAnimatedText = [
   "Developer",
   "Programmer",
-  "Tech Enthusiast",
-  "Gamer",
+  "AI Enthusiast",
+  "Open Source",
 ];
-export const shortDescription = "Full Stack Developer and ML Engineer";
+export const shortDescription = "Software Engineer & AI/ML Engineer";
 export const myName = "Murtaza Sadriwala";
 
 export const navLinks = [
@@ -41,8 +50,12 @@ export const navLinks = [
     title: "Experience",
   },
   {
+    id: "tech",
+    title: "Skills",
+  },
+  {
     id: "work",
-    title: "Work",
+    title: "Projects",
   },
   {
     id: "contact",
@@ -52,75 +65,155 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Data Science & ML Engineer",
+    title: "AI/ML Engineer",
     icon: mobile,
   },
   {
-    title: "Java Full Stack Developer",
+    title: "Full Stack Developer",
     icon: web,
   },
   {
-    title: "Backend Developer",
+    title: "Backend Engineer",
     icon: backend,
-  }
+  },
 ];
 
 const technologies = [
   {
     name: "Python",
     icon: python,
-    category: "Core Stack"
+    category: "Languages",
   },
   {
     name: "Java",
     icon: java,
-    category: "Core Stack"
+    category: "Languages",
   },
   {
-    name: "Tensorflow",
-    icon: tensorflow,
-    category: "Core Stack"
+    name: "JavaScript",
+    icon: javascript,
+    category: "Languages",
   },
   {
-    name: "Pytorch",
+    name: "SQL",
+    icon: sql,
+    category: "Languages",
+  },
+  {
+    name: "Bash",
+    icon: bash,
+    category: "Languages",
+  },
+  {
+    name: "PyTorch",
     icon: pytorch,
-    category: "Core Stack"
+    category: "AI/ML",
   },
   {
-    name: "MongoDB",
-    icon: mongodb,
-    category: "Core Stack"
+    name: "TensorFlow",
+    icon: tensorflow,
+    category: "AI/ML",
   },
   {
-    name: "Firebase",
-    icon: firebase,
-    category: "Core Stack"
+    name: "Transformers",
+    icon: tensorflow,
+    category: "AI/ML",
   },
   {
-    name: "git",
-    icon: git,
-    category: "Tools"
+    name: "RAG",
+    icon: tensorflow,
+    category: "AI/ML",
+  },
+  {
+    name: "Spring Boot",
+    icon: spring,
+    category: "Backend",
+  },
+  {
+    name: "FastAPI",
+    icon: fastapi,
+    category: "Backend",
+  },
+  {
+    name: "Flask",
+    icon: flask,
+    category: "Backend",
   },
   {
     name: "Docker",
     icon: docker,
-    category: "Tools"
-  }
+    category: "Cloud & DevOps",
+  },
+  {
+    name: "Azure",
+    icon: azure,
+    category: "Cloud & DevOps",
+  },
+  {
+    name: "Git",
+    icon: git,
+    category: "Cloud & DevOps",
+  },
+  {
+    name: "CI/CD",
+    icon: cicd,
+    category: "Cloud & DevOps",
+  },
+  {
+    name: "PostgreSQL",
+    icon: postgresql,
+    category: "Databases",
+  },
+  {
+    name: "MySQL",
+    icon: mysql,
+    category: "Databases",
+  },
+  {
+    name: "MongoDB",
+    icon: mongodb,
+    category: "Databases",
+  },
 ];
 
 const experiences = [
   {
     type: "internship",
+    title: "Software Engineering Intern",
+    company_name: "Mukta Labs",
+    icon: MuktaLabs,
+    iconBg: "#1a1a2e",
+    date: "Jun 2026 - Present",
+    points: [
+      "Delivered a knowledge graph prototype that turns unstructured documents into structured, queryable entities and relationships, by designing and building the core backend end-to-end, successfully demoed to CXO-level leadership.",
+      "Improved downstream query accuracy by implementing Coreference Resolution and Relation Extraction with spaCy, removing entity disambiguation errors across multi-document corpora.",
+      "Automated a modular, testable pipeline architecture for the team by integrating entity extraction, relationship generation, and PostgreSQL persistence into one backend, validated end-to-end ahead of the CXO demo.",
+    ],
+  },
+  {
+    type: "internship",
+    title: "Software Engineering Intern",
+    company_name: "Compu-Rf",
+    icon: sgsits,
+    iconBg: "#E6DEDD",
+    date: "Apr 2026 - Jun 2026",
+    points: [
+      "Shipped an automated alternative to manual TLC Rf/AUC measurement by directing end-to-end development of the computer vision pipeline (YOLO detection, OpenCV) and personally resolving architecture blockers across the team, taking the product to live rollout.",
+      "Enabled reliable Rf measurement across varying chromatography conditions by engineering solvent-aware OpenCV pipeline for spot detection, geometric alignment, and contour processing.",
+      "Cut manual analysis time for lab technicians by optimizing preprocessing/inference pipelines and owning the native ONNX Runtime backend integration, achieving 95% spot detection accuracy in live deployment.",
+    ],
+  },
+  {
+    type: "internship",
     title: "AI Research Intern",
-    company_name: "CloudRaft",
+    company_name: "CloudRaft Technologies",
     icon: CloudRaft,
     iconBg: "#fff",
-    date: "July 2025 - Nov 2025",
+    date: "Jul 2025 - Nov 2025",
     points: [
-      "Architected a Retrieval-Augmented Generation (RAG) system to map 10,000+ entity relationships, enabling advanced multi-hop reasoning and knowledge extraction.",
-      "Enhanced retrieval performance through advanced vectorization, achieving a 40% reduction in latency for large-scale semantic search operations.",
-      "Developed a trend analysis dashboard using unsupervised learning to cluster 100,000+ business data points, identifying key market trends for strategic decisions.",
-      "Researched and engineered an AI Data Summarizer providing contextual, actionable insights from complex documentation.",
+      "Shipped a client-facing analytics Business Trend Analysis Dashboard, processing 100,000+ business records enabling production-scale clustering and analytics for enterprise users.",
+      "Developed the foundation of a GraphRAG pipeline by integrating Neo4j, FAISS, and Sentence Transformers, enabling semantic retrieval across internal technology documentation for engineering teams.",
+      "Reduced semantic retrieval latency by 40% and implemented automated Knowledge Graph ingestion from technical documentation, establishing a scalable foundation for developer-centric RAG workflows.",
     ],
   },
   {
@@ -129,12 +222,11 @@ const experiences = [
     company_name: "Sparobix",
     icon: Sparobix,
     iconBg: "#111111",
-    date: "March 2025 - August 2025",
+    date: "Mar 2025 - Aug 2025",
     points: [
       "Implemented and analyzed Histogram of Oriented Gradients (HOG) descriptors merged with Support Vector Machines (SVM) for terrestrial object identification.",
       "Developed swarm intelligence optimization algorithms, including Particle Swarm Optimization (PSO) and Ant Colony Optimization (ACO), for applied problem-solving.",
       "Contributed to the design and development of Neural Networks for static image classification of space-based imagery.",
-      "Researched domain adaptation techniques for advanced space imagery analysis and autonomous decision-making frameworks.",
     ],
   },
   {
@@ -143,110 +235,109 @@ const experiences = [
     company_name: "CompuRf (SGSITS)",
     icon: sgsits,
     iconBg: "#E6DEDD",
-    date: "March 2025 - May 2025",
+    date: "Mar 2025 - May 2025",
     points: [
       "Developed a production-ready computer vision backend using OpenCV, automating Rf value computation for Thin Layer Chromatography (TLC).",
       "Achieved 95% spot detection accuracy by architecting an image processing pipeline with contour filtering and custom data augmentation.",
       "Engineered high-performance RESTful APIs using Python to integrate the deep learning engine with a Flutter mobile application.",
-      "Reduced manual analysis time by 80% and errors by 30% through real-time lab automation logic.",
     ],
   },
 ];
 
-const positionsOfResponsibility = [
+const leadership = [
   {
-    type: "por",
-    title: "Head Electronics & Web Development",
-    organization: "Team Naivedya (TIFAN)",
-    icon: naivedya,
-    iconBg: "#fff",
-    date: "Sept 2023 - Sept 2025",
+    title: "President",
+    organization: "#include - Student Technical Club, IT Dept, SGSITS",
+    date: "Apr 2026",
+    icon: sgsits,
+    iconBg: "#E6DEDD",
     points: [
-      "Led agricultural innovation initiatives at TIFAN (SAEINDIA), focusing on technical solutions for modern farming practices.",
-      "Conducted extensive field testing to validate the practical application of innovative agricultural technologies.",
-      "Developed an automated multi-vegetable transplanter utilizing mechanical synchronization, for which I hold a patent.",
-      "Provided ongoing technical leadership for electronics and web-based systems within a cross-functional engineering team.",
+      "Leading the IT department's technical club, organizing workshops, hackathons, and coding competitions for the student community.",
     ],
   },
   {
-    type: "por",
-    title: "Technical Team Member",
-    organization: "Team Dhoomketu",
-    icon: dhoomketu,
-    iconBg: "#111111",
-    date: "Feb 2024 - June 2024",
+    title: "Team Captain",
+    organization: "Team Nakshatra — ISRO Robotics Challenge 2026 (IRoC–U)",
+    date: "Dec 2025",
+    icon: sgsits,
+    iconBg: "#E6DEDD",
     points: [
-      "Collaborated on the ISRO IROC 2024 object detection challenge, developing advanced computer vision solutions.",
-      "Trained machine learning models utilizing Recurrent Neural Networks (RNN) for specialized sequence-based tasks.",
-      "Contributed to a dynamic startup environment focused on innovative technology solutions and detection capabilities.",
+      "Led the team in the ISRO Robotics Challenge, coordinating development and strategy for the competition.",
     ],
   },
-];
-
-
-const testimonials = [
   {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Dhruval proved me wrong.",
-    name: "Devesh Mani Tripathi",
-    designation: "CEO",
-    company: "ConnectBees",
-    image: "https://randomuser.me/api/portraits/men/65.jpg",
+    title: "GATE 2026",
+    organization: "AIR 1765 — CS/IT",
+    date: "Feb 2026",
+    icon: sgsits,
+    iconBg: "#E6DEDD",
+    points: [
+      "Secured All India Rank 1765 in GATE 2026 Computer Science & Information Technology.",
+    ],
   },
   {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Dhruval does.",
-    name: "Alok Maurya",
-    designation: "CTO",
-    company: "AltWorld",
-    image: "https://randomuser.me/api/portraits/men/45.jpg",
+    title: "Top 300",
+    organization: "Amazon ML Challenge 2025",
+    date: "Oct 2025",
+    icon: sgsits,
+    iconBg: "#E6DEDD",
+    points: [
+      "Ranked among the Top 300 in the Amazon Machine Learning Challenge 2025.",
+    ],
   },
   {
-    testimonial:
-      "After Dhruval optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Shikha Gupta",
-    designation: "Senior Product Manager",
-    company: "City Future Labs, IIT Kharagpur",
-    image: "https://randomuser.me/api/portraits/women/15.jpg",
+    title: "Top 25",
+    organization: "ICEA TruthTell 2025 — Ministry of IT & ICEA",
+    date: "Jan 2025",
+    icon: sgsits,
+    iconBg: "#E6DEDD",
+    points: [
+      "Secured Top 25 nationally at the ICEA TruthTell Hackathon, organized by Ministry of IT and ICEA.",
+    ],
   },
 ];
 
 const projects = [
   {
-    name: "Veritify: AI News Vigilance",
+    name: "Official SGSITS Website",
     description:
-      "A production-grade news verification system that utilizes semantic retrieval and contextual reasoning to identify misinformation. Recognized as Top 25 nationally at the ICEA TruthTell Hackathon.",
+      "Provisioned a production-grade Debian Linux server and deployed the application stack using Node.js, MySQL, PM2, and Nginx, enabling secure hosting for a platform serving 6,000+ students, 400+ faculty members, and 150+ CMS administrators. Automated MySQL backup, recovery, deployment, and routine server maintenance using Cron Jobs. Configured Nginx with reverse proxy, SSL termination, gzip compression, rate limiting, and server hardening.",
     tags: [
-      {
-        name: "python",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "transformers",
-        color: "green-text-gradient",
-      },
-      {
-        name: "flask",
-        color: "pink-text-gradient",
-      },
+      { name: "node.js", color: "green-text-gradient" },
+      { name: "mysql", color: "blue-text-gradient" },
+      { name: "nginx", color: "orange-text-gradient" },
+      { name: "linux", color: "pink-text-gradient" },
+    ],
+    image: sgsits,
+    source_code_link: "https://github.com/murtaza-sadri-19",
+  },
+  {
+    name: "Veritify: Real-Time News Verification",
+    description:
+      "Built an AI-powered fact verification platform integrating NLP, semantic retrieval, and claim-evidence matching to evaluate news credibility in real time. Engineered a modular NLP pipeline using Sentence Transformers, semantic similarity, topic extraction, and external news retrieval APIs, reducing average verification time by 95%. Designed RESTful Flask APIs and integrated them with a React frontend, enabling scalable ML inference with sub-second response latency.",
+    tags: [
+      { name: "python", color: "blue-text-gradient" },
+      { name: "transformers", color: "green-text-gradient" },
+      { name: "flask", color: "orange-text-gradient" },
+      { name: "react", color: "pink-text-gradient" },
     ],
     image: truthtrack,
     source_code_link: "https://github.com/murtaza-sadri-19/Veritify-AI-News-Vigilance",
     deploymentStatus: "Deployed",
-    deploymentLink: "https://huggingface.co/spaces/murtaza19/Veritify-News-Vigilance"
+    deploymentLink: "https://huggingface.co/spaces/murtaza19/Veritify-News-Vigilance",
   },
   {
     name: "Health Survey App",
     description:
-      "HealthSurveyAppAndroid is an Android application for collecting health survey data. The app features a user-friendly interface for data entry, offline capabilities for remote areas, and secure data storage. It aims to streamline health data collection.",
+      "An Android application for collecting health survey data with a user-friendly interface for data entry, offline capabilities for remote areas, and secure data collection.",
     tags: [
+      { name: "android", color: "green-text-gradient" },
       { name: "backend", color: "blue-text-gradient" },
-      { name: "database", color: "green-text-gradient" },
-      { name: "integrations", color: "pink-text-gradient" },
+      { name: "database", color: "orange-text-gradient" },
     ],
-    image: HealthApp, // Reference your asset here
-    source_code_link: "https://github.com/murtaza-sadri-19/HealthSurveyAppAndroid"
-  }
+    image: HealthApp,
+    source_code_link: "https://github.com/murtaza-sadri-19/HealthSurveyAppAndroid",
+  },
 ];
 
 const contactLinks = [
@@ -254,29 +345,29 @@ const contactLinks = [
     name: "GitHub",
     icon: githubIcon,
     url: "https://github.com/murtaza-sadri-19",
-    color: "#00d4ff",
+    color: "#c47d5a",
     description: "Check out my projects",
-    bgGradient: "from-blue-900/20 to-cyan-900/20",
+    bgGradient: "from-orange-900/20 to-red-900/20",
     username: "murtaza-sadri-19",
   },
   {
     name: "Email",
     icon: gmailIcon,
     url: "mailto:murtazasadriwala09@gmail.com",
-    color: "#bf61ff",
+    color: "#7d9b76",
     description: "Send me an email",
-    bgGradient: "from-purple-900/20 to-pink-900/20",
+    bgGradient: "from-green-900/20 to-emerald-900/20",
     username: "murtazasadriwala09@gmail.com",
   },
   {
     name: "LinkedIn",
     icon: linkedinIcon,
     url: "https://www.linkedin.com/in/murtazasadriwala/",
-    color: "#00cea8",
+    color: "#6b9eb8",
     description: "Connect with me",
-    bgGradient: "from-green-900/20 to-cyan-900/20",
+    bgGradient: "from-blue-900/20 to-cyan-900/20",
     username: "murtazasadriwala",
   },
 ];
 
-export { services, technologies, experiences, positionsOfResponsibility, testimonials, projects, contactLinks};
+export { services, technologies, experiences, leadership, projects, contactLinks };

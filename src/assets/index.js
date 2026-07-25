@@ -16,12 +16,21 @@ import java from "./tech/java.webp";
 import pytorch from "./tech/pytorch.webp";
 import tensorflow from "./tech/tensorflow.webp";
 import firebase from "./tech/firebase.svg";
+import javascript from "./tech/javascript.svg";
+import sql from "./tech/sql.svg";
+import spring from "./tech/spring.svg";
+import fastapi from "./tech/fastapi.svg";
+import flask from "./tech/flask.svg";
+import azure from "./tech/azure.svg";
+import postgresql from "./tech/postgresql.svg";
+import mysql from "./tech/mysql.svg";
+import bash from "./tech/bash.svg";
+import cicd from "./tech/cicd.svg";
 
 import CloudRaft from "./company/Cloudraft.png"
 import sgsits from "./company/sgsits.png"
-import naivedya from "./company/naivedya.svg"
-import dhoomketu from "./company/dhoomketu.png"
 import Sparobix from "./company/Sparobix.png"
+import MuktaLabs from "./company/MuktaLabs.svg"
 
 import carrent from "./sections/carrent.png";
 import jobit from "./sections/jobit.png";
@@ -59,6 +68,16 @@ export {
   firebase,
   tensorflow,
   pytorch,
+  javascript,
+  sql,
+  spring,
+  fastapi,
+  flask,
+  azure,
+  postgresql,
+  mysql,
+  bash,
+  cicd,
   carrent,
   jobit,
   tripguide,
@@ -67,9 +86,8 @@ export {
   scholarly,
   CloudRaft,
   sgsits,
-  naivedya,
-  dhoomketu,
   Sparobix,
+  MuktaLabs,
   CoderKabila,
   CompuRf,
   Depth_Estimator,

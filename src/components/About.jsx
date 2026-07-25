@@ -42,73 +42,60 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Welcome to <span className="text-white font-bold">my portfolio</span>!
         I'm <span className="text-white font-bold">Murtaza Sadriwala</span>, a
-        third-year B.Tech student who loves{" "}
+        Software Engineer and AI/ML Engineer who loves{" "}
         <span className="text-white font-semibold">
-          turning ideas into things that actually work
+          turning complex problems into working systems
         </span>
-        . I enjoy exploring how{" "}
+        . Currently a{" "}
         <span className="text-white font-semibold">
-          code, data, and creativity
-        </span>{" "}
-        <span className="text-white">converge</span> — whether it's{" "}
+          Software Engineering Intern at Mukta Labs
+        </span>
+        , where I build{" "}
         <span className="font-semibold text-white">
-          building intelligent systems
+          knowledge graphs and NLP pipelines
         </span>
-        ,{" "}
+        . Previously at{" "}
         <span className="font-semibold text-white">
-          experimenting with computer vision
+          Compu-Rf and CloudRaft
         </span>
-        , or{" "}
+        , shipping{" "}
         <span className="font-semibold text-white">
-          shaping products that solve real problems
-        </span>
-        . Through{" "}
-        <span className="text-white font-semibold">impactful projects</span>,{" "}
-        <span className="text-white font-semibold">
-          competitive hackathons
-        </span>
-        , and{" "}
-        <span className="text-white font-semibold">
-          research-driven challenges
-        </span>
-        , I've learned to{" "}
-        <span className="text-white font-bold">
-          think deeper and build smarter
+          computer vision pipelines and RAG systems
         </span>
         .
         <br />
-        What truly captivates me is{" "}
+        <br />
+        I'm passionate about{" "}
         <span className="text-white font-bold text-lg">
-          AI and machine learning
+          building intelligent systems
         </span>{" "}
-        — where models{" "}
-        <span className="text-white font-semibold">don't just compute</span>,
-        they <span className="text-white font-semibold">learn</span>,{" "}
-        <span className="text-white font-semibold">adapt</span>, and{" "}
-        <span className="text-white font-bold">surprise</span>. My journey has
-        been fueled by{" "}
+        — from{" "}
         <span className="text-white font-semibold">
-          curiosity and consistency
+          knowledge graphs and entity extraction
+        </span>{" "}
+        to{" "}
+        <span className="text-white font-semibold">
+          computer vision and semantic retrieval
         </span>
-        . I'm passionate about{" "}
-        <span className="font-semibold text-white">
-          breaking complexity into elegance
-        </span>{" "}
-        and crafting solutions that feel{" "}
+        . My work spans{" "}
         <span className="text-white font-semibold">
-          thoughtful and human
+          backend engineering, ML pipelines, and production infrastructure
         </span>
         .
         <br />
         <br />
-        <span className="text-blue-400 font-bold text-lg">
-          Always learning
-        </span> •{" "}
-        <span className="text-blue-400 font-bold text-lg">Always building</span> •{" "}
-        <span className="text-blue-400 font-bold text-lg">Always excited</span>{" "}
-        about what's next.
+        <span className="text-accent font-bold text-lg">
+          GATE 2026 AIR 1765
+        </span>{" "}
+        •{" "}
+        <span className="text-accent font-bold text-lg">
+          President #include
+        </span>{" "}
+        •{" "}
+        <span className="text-accent font-bold text-lg">
+          ISRO IRoC Captain
+        </span>
       </motion.p>
       <div className="mt-20 flex flex-wrap justify-center justify-center gap-10">
         {services.map((service, index) => (

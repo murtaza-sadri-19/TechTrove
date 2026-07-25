@@ -1,7 +1,6 @@
 import { useReducedMotion, useSpring } from 'framer-motion';
 import { memo, useEffect, useRef } from 'react';
-import { delay } from '../../utils/delay';
-import { classes } from '../../utils/style';
+import { classes } from '../../styles';
 import styles from './DecoderText.module.css';
 
 const hindi = [
@@ -66,7 +65,7 @@ const DecoderText = memo(
             });
 
             const startSpring = async () => {
-                await delay(startDelay);
+                await new Promise(r => setTimeout(r, startDelay));
                 decoderSpring.set(content.length);
             };
 

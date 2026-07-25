@@ -44,7 +44,7 @@ const ProjectCard = ({
               {source_code_link && (
                 <button
                   onClick={() => window.open(source_code_link, "_blank")}
-                  className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300 hover:shadow-lg hover:shadow-cyan-500/50 border border-cyan-300/50"
+                  className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-accent-warm flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300 hover:shadow-lg hover:shadow-accent/50 border border-accent/50"
                   title="View Source Code"
                 >
                   <img
@@ -57,7 +57,7 @@ const ProjectCard = ({
               {deploymentLink && (
                 <button
                   onClick={() => window.open(deploymentLink, "_blank")}
-                  className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300 hover:shadow-lg hover:shadow-pink-500/50 border border-pink-300/50"
+                  className="w-12 h-12 rounded-full bg-gradient-to-br from-accent-secondary to-green-400 flex justify-center items-center cursor-pointer hover:scale-110 transition-transform duration-300 hover:shadow-lg hover:shadow-accent-secondary/50 border border-accent-secondary/50"
                   title="View Live Demo"
                 >
                   <img
@@ -80,7 +80,7 @@ const ProjectCard = ({
 
         <div className="mt-5">
           {/* Displaying the project name and description */}
-          <h3 className="text-white font-bold text-[22px] lg:text-[24px] leading-tight hover:text-cyan-400 transition-colors duration-300">{name}</h3>
+          <h3 className="text-white font-bold text-[22px] lg:text-[24px] leading-tight hover:text-accent transition-colors duration-300">{name}</h3>
           <p className="mt-3 text-secondary text-[14px] leading-relaxed">{description}</p>
         </div>
 

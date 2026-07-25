@@ -15,10 +15,10 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrollPosition(window.scrollY);
-      
+
       // Use requestAnimationFrame for smooth 60fps
       const sections = navLinks.map(link => document.getElementById(link.id)).filter(Boolean);
-      
+
       for (let section of sections) {
         const rect = section.getBoundingClientRect();
         if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
@@ -47,25 +47,25 @@ const Navbar = () => {
                 key={link.id}
                 className="relative group"
               >
-                <a 
+                <a
                   href={`#${link.id}`}
                   onClick={() => setActive(link.title)}
                   className={`px-6 py-2 rounded-full font-medium transition-all duration-300 text-sm uppercase tracking-wider block relative overflow-hidden group ${
-                    active === link.title 
-                      ? "text-white" 
+                    active === link.title
+                      ? "text-white"
                       : "text-secondary hover:text-white"
                   }`}
                 >
                   {/* Glow Background for Active State */}
                   {active === link.title && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/40 to-purple-500/40 blur-md -z-10 animate-pulse" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-accent/40 to-accent-secondary/40 blur-md -z-10 animate-pulse" />
                   )}
-                  
+
                   {/* Active Underline */}
                   <span className="relative">
                     {link.title}
                     {active === link.title && (
-                      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-400 to-purple-400 mt-1"></div>
+                      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-accent to-accent-secondary mt-1"></div>
                     )}
                   </span>
                 </a>
@@ -88,11 +88,11 @@ const Navbar = () => {
             <p className='text-white text-sm font-bold cursor-pointer hidden xs:block'>Murtaza</p>
           </Link>
           <div className="flex flex-1 justify-end items-center">
-            <img 
-              src={toggle ? close : menu} 
-              alt="menu" 
-              className='w-[28px] h-[28px] object-contain cursor-pointer' 
-              onClick={() => setToggle(!toggle)} 
+            <img
+              src={toggle ? close : menu}
+              alt="menu"
+              className='w-[28px] h-[28px] object-contain cursor-pointer'
+              onClick={() => setToggle(!toggle)}
             />
 
             <div className={`${!toggle ? 'hidden' : 'flex'} p-6 backdrop-blur-xl bg-white/10 border border-white/20 absolute top-20 right-0 mx-4 my-2 min-w-[200px] z-10 rounded-2xl flex-col gap-4`}>
@@ -102,15 +102,15 @@ const Navbar = () => {
                     key={link.id}
                     className="w-full"
                   >
-                    <a 
+                    <a
                       href={`#${link.id}`}
                       onClick={() => {
                         setToggle(!toggle);
                         setActive(link.title);
                       }}
                       className={`block px-4 py-2 rounded-lg font-medium text-[16px] transition-all duration-300 ${
-                        active === link.title 
-                          ? "text-white bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border border-cyan-500/30" 
+                        active === link.title
+                          ? "text-white bg-gradient-to-r from-accent/20 to-accent-secondary/20 border border-accent/30"
                           : "text-secondary hover:text-white"
                       }`}
                     >
@@ -130,4 +130,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
