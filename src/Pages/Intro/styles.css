@@ -18,9 +18,9 @@
     --bs-btn-disabled-opacity: 0.65;
     --bs-btn-focus-box-shadow: 0 0 0 0.25rem rgba(var(--bs-btn-focus-shadow-rgb), .5);
 
-    --primary-color: #0d0d0d;
+    --primary-color: #0d0b0e;
     --secondary-color: #fff;
-    --text-color: #fff;
+    --text-color: #f0ebe5;
 }
 
 .mytextcolorwhite {
@@ -34,7 +34,7 @@
     text-transform: uppercase;
     font-size: calc((24 / 16) * 1rem);
     letter-spacing: 0.3em;
-    color: #00e5ff;
+    color: #c47d5a;
     font-weight: 500;
     line-height: 1;
     letter-spacing: 0.4rem;
