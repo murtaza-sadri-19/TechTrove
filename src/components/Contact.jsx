@@ -18,7 +18,7 @@ const Contact = () => {
       >
         {/* A text heading and subheading for the contact section */}
         <p className={styles.sectionSubText}>Let's Connect</p>
-        <h3 className={styles.sectionHeadText}>Contact</h3>
+        <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         {/* Primary CTA Button - Enhanced Visual Weight */}
         <div className="mt-12 mb-12">

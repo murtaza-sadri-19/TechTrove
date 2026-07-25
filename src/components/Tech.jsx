@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { styles } from '../styles';
 import { SectionWrapper } from '../hoc';
 import { technologies } from '../constants';
-import { fadeIn, textVariant } from '../utils/motion';
+import { fadeIn } from '../utils/motion';
 
 const TechIcon = ({ index, name, icon, category }) => {
   const getCategoryColor = (cat) => {
@@ -91,10 +91,10 @@ const Tech = () => {
 
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <div>
         <p className={styles.sectionSubText}>My Skills</p>
         <h2 className={styles.sectionHeadText}>Technologies.</h2>
-      </motion.div>
+      </div>
 
       <div className="mt-20 w-full space-y-12">
         {languages.length > 0 && <CategorySection category="Languages" techs={languages} />}
