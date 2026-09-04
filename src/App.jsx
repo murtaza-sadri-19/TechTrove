@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { About, Contact , Experience, Hero, Navbar, Tech, Works, StarsCanvas } from './components';
-import Intro from './Pages/Intro/Intro'
+import { About, Contact, Experience, Hero, Navbar, Tech, Works, Achievements, StarsCanvas } from './components';
+import Intro from './Pages/Intro/Intro';
+import NotFound from './Pages/NotFound/NotFound';
 
 const App = () => {
   return (
@@ -14,10 +15,13 @@ const App = () => {
                 <Navbar />
                 <Hero />
               </div>
-              <About />
-              <Experience />
-              <Tech />
-              <Works />
+              <main id="main-content">
+                <About />
+                <Experience />
+                <Tech />
+                <Works />
+                <Achievements />
+              </main>
               <div className="relative z-0">
                 <Contact />
                 <StarsCanvas />
@@ -25,10 +29,11 @@ const App = () => {
             </>
           } />
           <Route path="/intro" element={<Intro />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -1,42 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { services } from "../constants";
+import { services, education, myName } from "../constants";
 import { fadeIn } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
-import { MuktaLabs, CloudRaft, sgsits, Sparobix } from "../assets";
+import { MuktaLabs, CloudRaft, compurf } from "../assets";
 
 const companyLogos = [
-  { name: "Mukta Labs", logo: MuktaLabs },
-  { name: "Compu-Rf / SGSITS", logo: sgsits },
-  { name: "CloudRaft Technologies", logo: CloudRaft },
-  { name: "Sparobix", logo: Sparobix },
+  { name: "Mukta Labs", logo: MuktaLabs, role: "SWE Intern" },
+  { name: "Compu-Rf", logo: compurf, role: "SWE Intern" },
+  { name: "CloudRaft Technologies", logo: CloudRaft, role: "AI Research Intern" },
 ];
-
-/* ─────────────────────────────────────────
-   SERVICE CONFIG
-   ───────────────────────────────────────── */
-const serviceDetails = {
-  "AI/ML Engineer": {
-    description: "Knowledge Graphs, NLP pipelines, RAG systems, Computer Vision, PyTorch & TensorFlow.",
-    tags: ["PyTorch", "NLP", "RAG", "GraphRAG"],
-  },
-  "Full Stack Developer": {
-    description: "React frontends, FastAPI & Spring Boot backends, scalable REST APIs and microservices.",
-    tags: ["React", "FastAPI", "Spring Boot", "REST"],
-  },
-  "Backend Engineer": {
-    description: "Distributed systems, PostgreSQL, Docker, CI/CD pipelines, Linux server ops & DevOps.",
-    tags: ["Docker", "PostgreSQL", "CI/CD", "Linux"],
-  },
-};
 
 /* ─────────────────────────────────────────
    SERVICE CARD
    ───────────────────────────────────────── */
-const ServiceCard = ({ index, title, icon }) => {
-  const details = serviceDetails[title] || { description: "", tags: [] };
-
+const ServiceCard = ({ index, title, icon, description, tags }) => {
   return (
     <motion.div
       variants={fadeIn("up", "spring", 0.15 * index, 0.6)}
@@ -64,7 +43,7 @@ const ServiceCard = ({ index, title, icon }) => {
       >
         {/* Top row */}
         <div className="flex items-start justify-between">
-          <span className="font-mono text-xs text-accent opacity-60">
+          <span className="font-mono text-xs text-accent opacity-70">
             0{index + 1}
           </span>
 
@@ -85,22 +64,24 @@ const ServiceCard = ({ index, title, icon }) => {
             {title}
           </h3>
           <p className="text-secondary text-xs leading-relaxed">
-            {details.description}
+            {description}
           </p>
         </div>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
-          {details.tags.map(tag => (
-            <span
-              key={tag}
-              className="px-2.5 py-0.5 rounded text-[10px] font-mono text-secondary"
-              style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+        {tags && tags.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+            {tags.map(tag => (
+              <span
+                key={tag}
+                className="px-2.5 py-0.5 rounded text-[10px] font-mono text-secondary"
+                style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </motion.div>
   );
@@ -121,27 +102,64 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-base leading-relaxed max-w-3xl"
       >
-        I'm <span className="text-white-100 font-semibold">Murtaza Sadriwala</span>, a Software Engineer and AI/ML Engineer who loves turning complex problems into working systems. Currently a{" "}
-        <span className="text-white-100 font-semibold">Software Engineering Intern at Mukta Labs</span>, building knowledge graphs and NLP pipelines. Previously at Compu-Rf and CloudRaft, shipping computer vision pipelines and RAG systems.
+        I'm <span className="text-white-100 font-semibold">{myName}</span>, an Information Technology graduate from <span className="text-white-100 font-semibold">{education.institution}</span>. Specialized in building Knowledge Graphs, NLP Pipelines, GraphRAG Systems, Computer Vision models, and scalable backend server deployments. Currently a <span className="text-white-100 font-semibold">Software Engineering Intern at Mukta Labs</span>.
       </motion.p>
 
-      {/* ── Organization / Company Logos Strip ── */}
+      {/* ── Education Highlight Card ── */}
+      <motion.div
+        variants={fadeIn("up", "spring", 0.15, 0.6)}
+        className="mt-8 p-6 rounded-2xl max-w-3xl"
+        style={{
+          background: "rgba(217,194,77,0.04)",
+          backdropFilter: "blur(12px)",
+          border: "1px solid rgba(217,194,77,0.2)",
+          boxShadow: "inset 0 1px 1px rgba(255,255,255,0.05), 0 12px 28px rgba(0,0,0,0.3)",
+        }}
+      >
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 p-2 flex items-center justify-center flex-shrink-0">
+            <img src={education.logo} alt="SGSITS Logo" className="w-full h-full object-contain rounded-full" />
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-mono text-accent bg-amber-500/10 border border-amber-500/20 uppercase tracking-wider">
+                Education
+              </span>
+              <span className="text-secondary text-xs font-mono">{education.period}</span>
+            </div>
+            <h3 className="text-white-100 font-heading font-bold text-lg mt-1">
+              {education.institution}
+            </h3>
+            <p className="text-accent font-mono text-xs font-semibold">
+              {education.degree} — {education.field}
+            </p>
+            <p className="text-secondary text-xs mt-1 leading-relaxed">
+              {education.details}
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* ── Worked With Companies ── */}
       <motion.div
         variants={fadeIn("up", "tween", 0.2, 0.6)}
-        className="mt-8 pt-6 border-t border-white/5 flex flex-wrap items-center gap-8"
+        className="mt-8 pt-6 border-t border-white/5 flex flex-wrap items-center gap-6"
       >
         <p className="text-secondary text-[10px] font-mono uppercase tracking-widest w-full sm:w-auto">
-          Worked With
+          Work Experience Roles
         </p>
-        <div className="flex flex-wrap items-center gap-6">
+        <div className="flex flex-wrap items-center gap-4">
           {companyLogos.map((item, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-xl transition-all duration-200"
-              style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.05)" }}
+              className="flex items-center gap-2.5 px-3.5 py-2 rounded-xl transition-all duration-200"
+              style={{ background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)" }}
             >
               <img src={item.logo} alt={item.name} className="w-5 h-5 object-contain" />
-              <span className="text-xs font-mono text-secondary">{item.name}</span>
+              <div>
+                <span className="text-xs font-mono text-white-100 font-semibold block">{item.name}</span>
+                <span className="text-[10px] font-mono text-secondary">{item.role}</span>
+              </div>
             </div>
           ))}
         </div>

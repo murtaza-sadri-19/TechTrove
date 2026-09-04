@@ -8,17 +8,15 @@ import { SectionWrapper } from "../hoc";
    TECH TAG MAP
    ───────────────────────────────────────── */
 const expTechMap = {
-  "Mukta Labs": ["Knowledge Graphs", "spaCy", "NLP", "PostgreSQL"],
-  "Compu-Rf": ["YOLO", "OpenCV", "ONNX Runtime", "Computer Vision"],
-  "CloudRaft Technologies": ["Neo4j", "FAISS", "GraphRAG", "Sentence Transformers"],
-  "Sparobix": ["HOG / SVM", "PSO & ACO Swarm", "Neural Networks"],
-  "CompuRf (SGSITS)": ["OpenCV", "REST APIs", "Python Backend", "Flutter"],
+  "Mukta Labs": ["Knowledge Graphs", "spaCy", "Relation Extraction", "PostgreSQL", "Python"],
+  "Compu-Rf": ["YOLO", "OpenCV", "ONNX Runtime", "Computer Vision", "Python"],
+  "CloudRaft Technologies": ["GraphRAG", "Neo4j", "FAISS", "Sentence Transformers", "Python"],
 };
 
 /* ─────────────────────────────────────────
    GRAPE / ORB NODE
    ───────────────────────────────────────── */
-const GrapeOrbNode = ({ icon, isGold = true }) => {
+const GrapeOrbNode = ({ icon, isGold = true, altText = "node" }) => {
   const primaryColor = isGold ? "#d9c24d" : "#6c86b5";
   const glowRgb = isGold ? "217,194,77" : "108,134,181";
 
@@ -46,7 +44,7 @@ const GrapeOrbNode = ({ icon, isGold = true }) => {
         }}
       >
         {icon ? (
-          <img src={icon} alt="node" className="w-full h-full object-contain rounded-full" />
+          <img src={icon} alt={altText} className="w-full h-full object-contain rounded-full" />
         ) : (
           <div className="w-2.5 h-2.5 rounded-full" style={{ background: primaryColor }} />
         )}
@@ -59,7 +57,7 @@ const GrapeOrbNode = ({ icon, isGold = true }) => {
    WORK TIMELINE CARD
    ───────────────────────────────────────── */
 const TimelineCard = ({ data, index, isLeft }) => {
-  const techStack = expTechMap[data.company_name] || [];
+  const techStack = data.tech || expTechMap[data.company_name] || [];
 
   return (
     <div className={`relative flex flex-col md:flex-row items-center w-full my-8 ${isLeft ? "md:flex-row-reverse" : ""}`}>
@@ -70,7 +68,7 @@ const TimelineCard = ({ data, index, isLeft }) => {
         transition={{ duration: 0.6, delay: 0.1, type: "spring", stiffness: 100 }}
         className="w-full md:w-[calc(50%-40px)] z-10"
       >
-        <div
+        <article
           className="relative p-6 rounded-2xl overflow-hidden group transition-all duration-300"
           style={{
             background: "rgba(255,255,255,0.03)",
@@ -91,7 +89,7 @@ const TimelineCard = ({ data, index, isLeft }) => {
           <div className="flex items-start justify-between gap-3 mb-2">
             <div>
               <span className="text-secondary text-[11px] font-mono tracking-wider block mb-1">
-                {data.date}
+                {data.date} {data.location && `• ${data.location}`}
               </span>
               <h3 className="font-heading font-bold text-white-100 text-lg leading-tight">
                 {data.title}
@@ -110,10 +108,10 @@ const TimelineCard = ({ data, index, isLeft }) => {
 
           <div className="h-[1px] bg-white/5 my-3" />
 
-          <ul className="space-y-2">
+          <ul className="space-y-2" aria-label={`Responsibilities at ${data.company_name}`}>
             {data.points.map((point, idx) => (
               <li key={idx} className="flex items-start gap-2.5 text-xs text-secondary leading-relaxed group-hover:text-white-100/90 transition-colors">
-                <span className="text-accent mt-0.5 flex-shrink-0">▹</span>
+                <span className="text-accent mt-0.5 flex-shrink-0" aria-hidden="true">▹</span>
                 <span>{point}</span>
               </li>
             ))}
@@ -132,11 +130,11 @@ const TimelineCard = ({ data, index, isLeft }) => {
               ))}
             </div>
           )}
-        </div>
+        </article>
       </motion.div>
 
       <div className="hidden md:flex items-center justify-center w-20 flex-shrink-0">
-        <GrapeOrbNode icon={data.icon} isGold={true} />
+        <GrapeOrbNode icon={data.icon} isGold={true} altText={data.company_name} />
       </div>
 
       <div className="hidden md:block w-[calc(50%-40px)]" />
@@ -159,7 +157,7 @@ const LeadershipTimelineCard = ({ data, index, isLeft }) => {
         transition={{ duration: 0.6, delay: 0.1, type: "spring", stiffness: 100 }}
         className="w-full md:w-[calc(50%-40px)] z-10"
       >
-        <div
+        <article
           className="relative p-6 rounded-2xl overflow-hidden group transition-all duration-300"
           style={{
             background: "rgba(255,255,255,0.03)",
@@ -192,7 +190,7 @@ const LeadershipTimelineCard = ({ data, index, isLeft }) => {
               </p>
             </div>
 
-            {/* Explicit Leadership & Achievement Tags */}
+            {/* Leadership & Achievement Tags */}
             <span
               className="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-semibold uppercase tracking-wider flex-shrink-0"
               style={{
@@ -210,16 +208,16 @@ const LeadershipTimelineCard = ({ data, index, isLeft }) => {
           <ul className="space-y-2">
             {data.points.map((point, idx) => (
               <li key={idx} className="flex items-start gap-2.5 text-xs text-secondary leading-relaxed group-hover:text-white-100/90 transition-colors">
-                <span className="mt-0.5 flex-shrink-0" style={{ color: isLeadershipTag ? "#d9c24d" : "#6c86b5" }}>▹</span>
+                <span className="mt-0.5 flex-shrink-0" style={{ color: isLeadershipTag ? "#d9c24d" : "#6c86b5" }} aria-hidden="true">▹</span>
                 <span>{point}</span>
               </li>
             ))}
           </ul>
-        </div>
+        </article>
       </motion.div>
 
       <div className="hidden md:flex items-center justify-center w-20 flex-shrink-0">
-        <GrapeOrbNode icon={data.icon} isGold={isLeadershipTag} />
+        <GrapeOrbNode icon={data.icon} isGold={isLeadershipTag} altText={data.title} />
       </div>
 
       <div className="hidden md:block w-[calc(50%-40px)]" />
@@ -232,19 +230,12 @@ const LeadershipTimelineCard = ({ data, index, isLeft }) => {
    ───────────────────────────────────────── */
 const Experience = () => {
   const workRef = useRef(null);
-  const leadershipRef = useRef(null);
 
   const { scrollYProgress: workScroll } = useScroll({
     target: workRef,
     offset: ["start 70%", "end 90%"],
   });
   const workScaleY = useSpring(workScroll, { stiffness: 100, damping: 30 });
-
-  const { scrollYProgress: leadScroll } = useScroll({
-    target: leadershipRef,
-    offset: ["start 70%", "end 90%"],
-  });
-  const leadScaleY = useSpring(leadScroll, { stiffness: 100, damping: 30 });
 
   return (
     <div className="relative">
@@ -273,65 +264,6 @@ const Experience = () => {
               <TimelineCard
                 key={`exp-${index}`}
                 data={experience}
-                index={index}
-                isLeft={index % 2 === 0}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* ══ GLOWING SECTION SEPARATION ══ */}
-      <div className="relative my-20 py-8 flex items-center justify-center">
-        <div
-          className="absolute inset-0 pointer-events-none rounded-full"
-          style={{
-            background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(217,194,77,0.12) 0%, rgba(108,134,181,0.08) 50%, transparent 80%)",
-            filter: "blur(30px)",
-          }}
-        />
-
-        <div
-          className="w-full h-[1.5px] relative z-10"
-          style={{
-            background: "linear-gradient(90deg, transparent 0%, rgba(217,194,77,0.6) 35%, rgba(108,134,181,0.6) 65%, transparent 100%)",
-            boxShadow: "0 0 16px rgba(217,194,77,0.4), 0 0 30px rgba(108,134,181,0.3)",
-          }}
-        />
-
-        <div
-          className="absolute z-20 w-4 h-4 rotate-45 rounded-sm"
-          style={{
-            background: "linear-gradient(135deg, #d9c24d, #6c86b5)",
-            boxShadow: "0 0 16px rgba(217,194,77,0.8), 0 0 24px rgba(108,134,181,0.6)",
-          }}
-        />
-      </div>
-
-      {/* ══ BLOCK 2: LEADERSHIP & ACHIEVEMENTS ══ */}
-      <div ref={leadershipRef} className="relative">
-        <div>
-          <p className={styles.sectionSubText}>Achievements &amp; Recognition</p>
-          <h2 className={styles.sectionHeadText}>Leadership.</h2>
-        </div>
-
-        <div className="relative mt-12 pb-4">
-          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-4 bottom-2 w-[2px] bg-white/10 z-0 rounded-full" />
-
-          <motion.div
-            className="hidden md:block absolute left-1/2 -translate-x-1/2 top-4 bottom-2 w-[3px] z-0 origin-top rounded-full"
-            style={{
-              scaleY: leadScaleY,
-              background: "linear-gradient(to bottom, #6c86b5 0%, #22d3ee 100%)",
-              boxShadow: "0 0 12px rgba(108,134,181,0.6)",
-            }}
-          />
-
-          <div className="space-y-2">
-            {leadership.map((item, index) => (
-              <LeadershipTimelineCard
-                key={`lead-${index}`}
-                data={item}
                 index={index}
                 isLeft={index % 2 === 0}
               />

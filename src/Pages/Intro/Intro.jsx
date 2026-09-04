@@ -16,6 +16,13 @@ const Intro = () => {
         return () => clearTimeout(timeout);
     }, []);
 
+    useEffect(() => {
+        document.title = 'Welcome | Murtaza Sadriwala';
+        return () => {
+            document.title = 'Murtaza Sadriwala | Software Engineer & AI/ML Engineer | Portfolio';
+        };
+    }, []);
+
     const children = [
         <div style={{ paddingBottom: 15 }} className="hithere font-2-4">
             Hi There !
@@ -33,7 +40,7 @@ const Intro = () => {
 
     return (
         <section id="home" className="section">
-            <div className="intro_sec d-flex align-items-center">
+            <div className="intro_sec flex items-center">
                 <div className="intro mx-auto">
                     <TransitionGroup component={null}>
                         {isMounted && children.map((item, i) => (

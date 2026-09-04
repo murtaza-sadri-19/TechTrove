@@ -5,6 +5,7 @@ import About from './About';
 import Tech from './Tech';
 import Experience from './Experience';
 import Works from './Works';
+import Achievements from './Achievements';
 import Contact from './Contact';
 
 export {
@@ -14,8 +15,10 @@ export {
   Tech,
   Experience,
   Works,
+  Achievements,
+  Achievements as Feedbacks,
   Contact,
   EarthCanvas,
   StarsCanvas,
   KnowledgeGraphCanvas,
-}
+};
